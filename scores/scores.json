@@ -1,0 +1,65 @@
+{
+  "idToTestNameHash": {
+    "DeTe1": "Debug Tests fixVariable - The message is logged and returned correctly",
+    "DeTe2": "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original",
+    "DeTe3": "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array",
+    "FrScTe1": "From Scratch Tests petJudger - it logs the correct messages",
+    "FrScTe2": "From Scratch Tests loopFromOneUpToAnother - it logs the correct numbers",
+    "FrScTe3": "From Scratch Tests shoutEveryLetter - it logs the correct letters",
+    "FrScTe4": "From Scratch Tests generateMultiplesOf5ToNum - it returns the correct array of numbers",
+    "FrScTe5": "From Scratch Tests isLongArray - it returns the correct boolean",
+    "FrScTe6": "From Scratch Tests addToFrontOrBack - adds value to the front or back of a given arr",
+    "FrScTe7": "From Scratch Tests addToFrontOrBack - handles missing value properly",
+    "FrScTe8": "From Scratch Tests replaceMiddleValue - replaces the middle value of the array with the given value",
+    "FrScTe9": "From Scratch Tests getAllXCoordinates - returns an array of all x coordinates",
+    "FrScTe10": "From Scratch Tests carMaker - returns a car object with right primitive properties",
+    "FrScTe11": "From Scratch Tests carMaker - returns a car object with the owner passed into the owners array",
+    "FrScTe12": "From Scratch Tests getFavoriteChildName - returns the name of the first child",
+    "FrScTe13": "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated"
+  },
+  "testNameToIdHash": {
+    "Debug Tests fixVariable - The message is logged and returned correctly": "DeTe1",
+    "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original": "DeTe2",
+    "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array": "DeTe3",
+    "From Scratch Tests petJudger - it logs the correct messages": "FrScTe1",
+    "From Scratch Tests loopFromOneUpToAnother - it logs the correct numbers": "FrScTe2",
+    "From Scratch Tests shoutEveryLetter - it logs the correct letters": "FrScTe3",
+    "From Scratch Tests generateMultiplesOf5ToNum - it returns the correct array of numbers": "FrScTe4",
+    "From Scratch Tests isLongArray - it returns the correct boolean": "FrScTe5",
+    "From Scratch Tests addToFrontOrBack - adds value to the front or back of a given arr": "FrScTe6",
+    "From Scratch Tests addToFrontOrBack - handles missing value properly": "FrScTe7",
+    "From Scratch Tests replaceMiddleValue - replaces the middle value of the array with the given value": "FrScTe8",
+    "From Scratch Tests getAllXCoordinates - returns an array of all x coordinates": "FrScTe9",
+    "From Scratch Tests carMaker - returns a car object with right primitive properties": "FrScTe10",
+    "From Scratch Tests carMaker - returns a car object with the owner passed into the owners array": "FrScTe11",
+    "From Scratch Tests getFavoriteChildName - returns the name of the first child": "FrScTe12",
+    "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated": "FrScTe13"
+  },
+  "testScores": {
+    "Debug Tests": {
+      "DeTe1": 0,
+      "DeTe2": 0,
+      "DeTe3": 0
+    },
+    "From Scratch Tests": {
+      "FrScTe1": 0,
+      "FrScTe2": 0,
+      "FrScTe3": 0,
+      "FrScTe4": 0,
+      "FrScTe5": 0,
+      "FrScTe6": 0,
+      "FrScTe7": 0,
+      "FrScTe8": 0,
+      "FrScTe9": 0,
+      "FrScTe10": 0,
+      "FrScTe11": 0,
+      "FrScTe12": 0,
+      "FrScTe13": 0
+    }
+  },
+  "humanReadable": {
+    "Debug Tests": "0/3",
+    "finalTestScore": "FINAL SCORE: 0/16",
+    "From Scratch Tests": "0/13"
+  }
+}
