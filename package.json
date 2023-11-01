@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "cp hooks/pre-commit .git/hooks/pre-commit",
-    "ssa": "node scores/score-short-answers.js",
+    "ssa": "node ./scores/score-short-answers.js && eslint . --format ./scores/formatter.js",
     "scratch": "nodemon src/from-scratch.js",
     "debug": "nodemon src/debug.js",
     "playground": "nodemon playground.js",

@@ -3,7 +3,8 @@ const ScoreCounter = require('score-tests');
 const {
   petJudger,
   loopFromOneUpToAnother,
-  shoutEveryLetter,
+  shoutEveryLetterForLoop,
+  shoutArrayMethod,
   generateMultiplesOf5ToNum,
   isLongArray,
   addToFrontOrBack,
@@ -11,6 +12,9 @@ const {
   getAllXCoordinates,
   carMaker,
   getFavoriteChildName,
+  getPessimisticTotal,
+  getNamesOfGreedyGnomes,
+  getAllNumbersFromString,
   obliterate,
 } = require('./from-scratch');
 
@@ -97,8 +101,8 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('shoutEveryLetter - it logs the correct letters', () => {
-    shoutEveryLetter('hello');
+  it('shoutEveryLetterForLoop - it logs the correct letters', () => {
+    shoutEveryLetterForLoop('hello');
     expect(log).toHaveBeenCalledTimes(5);
     expect(log).toHaveBeenNthCalledWith(1, 'H!');
     expect(log).toHaveBeenNthCalledWith(2, 'E!');
@@ -108,7 +112,7 @@ describe(testSuiteName, () => {
 
     jest.clearAllMocks();
 
-    shoutEveryLetter('goodbye');
+    shoutEveryLetterForLoop('goodbye');
     expect(log).toHaveBeenCalledTimes(7);
     expect(log).toHaveBeenNthCalledWith(1, 'G!');
     expect(log).toHaveBeenNthCalledWith(2, 'O!');
@@ -119,8 +123,72 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(7, 'E!');
     jest.clearAllMocks();
 
-    shoutEveryLetter('');
+    shoutEveryLetterForLoop('');
     expect(log).toHaveBeenCalledTimes(0);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('shoutEveryLetterForLoop - it uses a for loop', () => {
+    // We're using regex on the stringified function
+    const strFunc = shoutEveryLetterForLoop.toString();
+    expect(/for\s+\(/gi.test(strFunc)).toBe(true);
+
+    // Repeated test to prevent auto pass
+    shoutEveryLetterForLoop('hello');
+    expect(log).toHaveBeenCalledTimes(5);
+    expect(log).toHaveBeenNthCalledWith(1, 'H!');
+    expect(log).toHaveBeenNthCalledWith(2, 'E!');
+    expect(log).toHaveBeenNthCalledWith(3, 'L!');
+    expect(log).toHaveBeenNthCalledWith(4, 'L!');
+    expect(log).toHaveBeenNthCalledWith(5, 'O!');
+
+    jest.clearAllMocks();
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('shoutArrayMethod - it logs the correct letters without a for loop', () => {
+    shoutArrayMethod('hey');
+    expect(log).toHaveBeenCalledTimes(3);
+    expect(log).toHaveBeenNthCalledWith(1, 'H!');
+    expect(log).toHaveBeenNthCalledWith(2, 'E!');
+    expect(log).toHaveBeenNthCalledWith(3, 'Y!');
+
+    jest.clearAllMocks();
+
+    shoutArrayMethod('sayonara');
+    expect(log).toHaveBeenCalledTimes(8);
+    expect(log).toHaveBeenNthCalledWith(1, 'S!');
+    expect(log).toHaveBeenNthCalledWith(2, 'A!');
+    expect(log).toHaveBeenNthCalledWith(3, 'Y!');
+    expect(log).toHaveBeenNthCalledWith(4, 'O!');
+    expect(log).toHaveBeenNthCalledWith(5, 'N!');
+    expect(log).toHaveBeenNthCalledWith(6, 'A!');
+    expect(log).toHaveBeenNthCalledWith(7, 'R!');
+    expect(log).toHaveBeenNthCalledWith(8, 'A!');
+    jest.clearAllMocks();
+
+    shoutArrayMethod('');
+    expect(log).toHaveBeenCalledTimes(0);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('shoutArrayMethod - it does not use a loop', () => {
+    // We're using regex on the stringified function
+    // so that means even a COMMENT can fail this test
+    // DO NOT INCLUDE THE WORD "for" OR "while" anywhere in the function
+    const strFunc = shoutArrayMethod.toString();
+    expect(/for\s+\(/gi.test(strFunc)).toBe(false);
+    expect(/while\s+\(/gi.test(strFunc)).toBe(false);
+
+    // repeated test to prevent auto pass
+    shoutArrayMethod('hey');
+    expect(log).toHaveBeenCalledTimes(3);
+    expect(log).toHaveBeenNthCalledWith(1, 'H!');
+    expect(log).toHaveBeenNthCalledWith(2, 'E!');
+    expect(log).toHaveBeenNthCalledWith(3, 'Y!');
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
@@ -289,6 +357,152 @@ describe(testSuiteName, () => {
 
     parent1.children.shift();
     expect(getFavoriteChildName(parent1)).toBe(null);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('getPessimisticTotal - adds up all the given numbers to a total and then rounds down to the nearest int', () => {
+    expect(getPessimisticTotal([1.2, 1.2, 1.2, 1.2, 1.2])).toBe(6);
+    expect(getPessimisticTotal([0])).toBe(0);
+    expect(getPessimisticTotal([])).toBe(0);
+    expect(getPessimisticTotal([1])).toBe(1);
+    expect(getPessimisticTotal([1.9])).toBe(1);
+    expect(getPessimisticTotal([5.5, 5.5])).toBe(11);
+    expect(getPessimisticTotal([1, 2, 3, 4, 5.1])).toBe(15);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('getNamesOfGreedyGnomes - returns an array of the right length', () => {
+    const gnomes = [
+      {
+        name: 'Garbeldel',
+        gardenCount: 2,
+        age: 407,
+        stolenDecorations: ['chair', 'fountain', 'statue'],
+      },
+      {
+        name: 'Farbus',
+        gardenCount: 3,
+        age: 281,
+        stolenDecorations: ['greek statue', 'chair', 'bird bath'],
+      },
+      {
+        name: 'Peekle',
+        gardenCount: 3,
+        age: 101,
+        stolenDecorations: ['bird bath', 'thermometer', 'rocks'],
+      },
+      {
+        name: 'Jorbles',
+        gardenCount: 3,
+        age: 900,
+        stolenDecorations: ['wind chimes', 'rocks', 'mini golfer'],
+      },
+    ];
+
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(4);
+
+    gnomes[0].stolenDecorations.length = 2;
+    gnomes[1].stolenDecorations.length = 2;
+    gnomes[2].stolenDecorations.length = 2;
+    gnomes[3].stolenDecorations.length = 2;
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(4);
+
+    gnomes[0].stolenDecorations.length = 1;
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(3);
+
+    gnomes[1].stolenDecorations.length = 0;
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(2);
+
+    gnomes[2].stolenDecorations.length = 1;
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(1);
+
+    gnomes[3].stolenDecorations.length = 0;
+    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(0);
+
+    expect(getNamesOfGreedyGnomes([]).length).toEqual(0);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('getNamesOfGreedyGnomes - returns an array of the right length', () => {
+    const gnomes = [
+      {
+        name: 'Garbeldel',
+        gardenCount: 2,
+        age: 407,
+        stolenDecorations: ['chair', 'fountain'],
+      },
+      {
+        name: 'Farbus',
+        gardenCount: 3,
+        age: 281,
+        stolenDecorations: ['greek statue', 'chair'],
+      },
+      {
+        name: 'Peekle',
+        gardenCount: 3,
+        age: 101,
+        stolenDecorations: ['bird bath', 'thermometer'],
+      },
+      {
+        name: 'Jorbles',
+        gardenCount: 3,
+        age: 900,
+        stolenDecorations: ['wind chimes', 'mini golfer'],
+      },
+    ];
+
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([
+      'Garbeldel', 'Farbus', 'Peekle', 'Jorbles',
+    ]);
+
+    gnomes[0].stolenDecorations.length = 2;
+    gnomes[1].stolenDecorations.length = 2;
+
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([
+      'Garbeldel', 'Farbus', 'Peekle', 'Jorbles',
+    ]);
+
+    gnomes[0].stolenDecorations.length = 0;
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Farbus', 'Peekle', 'Jorbles']);
+    gnomes[1].stolenDecorations.length = 1;
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Peekle', 'Jorbles']);
+
+    gnomes[2].stolenDecorations.length = 1;
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Jorbles']);
+
+    gnomes[3].stolenDecorations.length = 0;
+    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([]);
+
+    expect(getNamesOfGreedyGnomes([])).toEqual([]);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('getNamesOfGreedyGnomes - returns an array of the right length', () => {
+    // We're using regex on the stringified function
+    // so that means even a COMMENT can fail this test
+    // DO NOT INCLUDE THE WORD "for" OR "while" anywhere in the function
+    const strFunc = getNamesOfGreedyGnomes.toString();
+    expect(/for\s+\(/gi.test(strFunc)).toBe(false);
+    expect(/while\s+\(/gi.test(strFunc)).toBe(false);
+
+    // repeated test to prevent auto pass
+    expect(getNamesOfGreedyGnomes([])).toEqual([]);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('getAllNumbersFromString - returns an array of all digits', () => {
+    expect(getAllNumbersFromString('')).toEqual([]);
+    expect(getAllNumbersFromString('abc')).toEqual([]);
+    expect(getAllNumbersFromString('123')).toEqual(['123']);
+    expect(getAllNumbersFromString('abc123')).toEqual(['123']);
+    expect(getAllNumbersFromString('abc12def3asd45')).toEqual(['12', '3', '45']);
+    expect(getAllNumbersFromString('One fine day ten bees ate two pizza pies')).toEqual([]);
+    expect(getAllNumbersFromString('1 fine day 10 bees ate 2 pizza 3.14s')).toEqual(['1', '10', '2', '3', '14']);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });

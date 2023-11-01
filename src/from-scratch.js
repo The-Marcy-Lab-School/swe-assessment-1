@@ -1,16 +1,16 @@
 const petJudger = () => {
 };
 
-const loopFromOneToAnother = () => {
+const loopFromOneUpToAnother = () => {
 };
 
-const shoutEveryLetter = () => {
+const shoutEveryLetterForLoop = () => {
 };
 
-const onlyMultiplesOf5To100 = () => {
+const shoutArrayMethod = () => {
 };
 
-const whileLessThanPoint5 = () => {
+const generateMultiplesOf5ToNum = () => {
 };
 
 const isLongArray = () => {
@@ -31,21 +31,33 @@ const carMaker = () => {
 const getFavoriteChildName = () => {
 };
 
-// DO THIS ONE after all else
+const getPessimisticTotal = () => {
+};
+
+const getNamesOfGreedyGnomes = () => {
+};
+
+const getAllNumbersFromString = () => {
+};
+
+// Do this only after all else
 const obliterate = () => {
 };
 
 module.exports = {
   petJudger,
-  loopFromOneToAnother,
-  shoutEveryLetter,
-  onlyMultiplesOf5To100,
-  whileLessThanPoint5,
+  loopFromOneUpToAnother,
+  shoutEveryLetterForLoop,
+  shoutArrayMethod,
+  generateMultiplesOf5ToNum,
   isLongArray,
   addToFrontOrBack,
   replaceMiddleValue,
   getAllXCoordinates,
   carMaker,
   getFavoriteChildName,
+  getPessimisticTotal,
+  getNamesOfGreedyGnomes,
+  getAllNumbersFromString,
   obliterate,
 };

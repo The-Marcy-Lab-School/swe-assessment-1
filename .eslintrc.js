@@ -13,11 +13,13 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    semi: 'off',
     'object-curly-newline': 'off',
     'no-plusplus': 'off',
     'no-promise-executor-return': 'off',
     'func-style': 2,
     'arrow-body-style': 'off',
+    'arrow-parens': 'off',
     'no-continue': 'off',
     'no-constant-condition': 'off',
     'no-param-reassign': 'off',

@@ -1,5 +1,5 @@
 const path = require('path');
-const ScoreCounter = require('score-tests'); // eslint-disable-line import/no-extraneous-dependencies
+const ScoreCounter = require('score-tests');
 const {
   fixVariables,
   doubleAllItemsPurely,

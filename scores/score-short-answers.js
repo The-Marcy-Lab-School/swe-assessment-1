@@ -1,59 +1,69 @@
 const fs = require('fs');
 const path = require('path');
 const prompt = require('prompt-sync')({ sigint: true });
-const scoresJson = require('./scores.json');
-
-scoresJson.shortAnswers ||= { scores: {}, hasGrammarIssues: false, humanReadable: 0 };
 
 const shortAnswersDir = path.join(__dirname, '..', 'short-answers');
+let scoresJson;
 
-const selectOnlyQuestionFiles = (fileName) => fileName.match(/q\d+/);
+try {
+  scoresJson = JSON.parse(fs.readFileSync(path.join(__dirname, 'scores.json'), 'utf-8'));
+  scoresJson.shortAnswers = scoresJson.shortAnswers || {};
+} catch (err) {
+  scoresJson = { shortAnswers: {} };
+}
 
-const scoreTheQuestion = (fileName, idx, arr) => {
+const getQuestionScore = () => {
+  while (true) {
+    const score = prompt('Score: ');
+    if (['0', '1', '2', '3'].includes(score)) return Number(score);
+    console.log('Invalid score. Please enter 0, 1, 2, or 3');
+  }
+};
+
+const getQuestionHasGrammarIssues = () => {
+  while (true) {
+    const yOrN = prompt('Any grammar issues? (y/n) (or hit enter for n):');
+    if (['y', 'n', ''].includes(yOrN)) return yOrN === 'y';
+    console.log('Please enter y or n exactly.');
+  }
+};
+
+const gradeTheQuestion = (fileName, idx, arr) => {
   const contents = fs.readFileSync(path.join(shortAnswersDir, fileName), 'utf-8');
   console.clear();
   console.log(`Q${idx + 1} of ${arr.length}\n${contents}\n----------------`);
-  let score;
-  while (true) {
-    score = Number(prompt('Score: '));
-    if ([0, 1, 2].includes(score)) break;
-    console.log('Invalid score. Please enter 0, 1, or 2');
-  }
+
   const questionNumber = fileName.split('.md')[0];
-  scoresJson.shortAnswers.scores[questionNumber] = score;
+  scoresJson.shortAnswers[questionNumber] = {
+    score: getQuestionScore(),
+    hasGrammarIssues: getQuestionHasGrammarIssues(),
+  };
 };
 
-const setGrammarIssues = () => {
+const setAndDisplayFinalCanvasScore = () => {
+  const totalScore = Object.values(scoresJson.shortAnswers)
+    .reduce((total, { score }) => total + score, 0);
+  const hasAnyGrammarIssues = Object.values(scoresJson.shortAnswers)
+    .some(({ hasGrammarIssues }) => hasGrammarIssues);
+  console.log('hasAnyGrammarIssues:', hasAnyGrammarIssues);
+  const finalCanvasScore = totalScore - (Number(hasAnyGrammarIssues) * 0.5);
+  const maxScore = Object.keys(scoresJson.shortAnswers).length * 3;
+
+  scoresJson.humanReadable['Short Answers'] = `${finalCanvasScore}/${maxScore}`;
   console.clear();
-  let yOrN;
-  while (true) {
-    yOrN = prompt('Does the student have grammar issues? (y/n) ');
-    if (['y', 'n'].includes(yOrN)) break;
-    console.log('Please enter y or n exactly.');
-  }
-
-  scoresJson.shortAnswers.hasGrammarIssues = yOrN === 'y';
+  console.log(`\nCanvas score: ${finalCanvasScore}/${maxScore}`);
 };
 
-const setFinalScore = () => {
-  const { scores, hasGrammarIssues } = scoresJson.shortAnswers;
-  const totalScore = Object.values(scores).reduce((total, num) => total + num, 0);
-  const humanReadable = totalScore - (Number(hasGrammarIssues) * 0.5);
-  scoresJson.shortAnswers.humanReadable = humanReadable;
-
-  console.log(`\nCanvas score: ${humanReadable}`);
-};
+const selectOnlyQuestionFiles = (fileName) => fileName.match(/^q\d+\.md$/);
 
 const main = () => {
   fs.readdirSync(shortAnswersDir)
     .filter(selectOnlyQuestionFiles)
-    .forEach(scoreTheQuestion);
+    .forEach(gradeTheQuestion);
 
-  setGrammarIssues();
+  setAndDisplayFinalCanvasScore();
 
-  setFinalScore();
-
-  fs.writeFileSync(path.join(__dirname, 'scores.json'), JSON.stringify(scoresJson, null, 2));
+  fs.writeFileSync(path.join(__dirname, 'scores.json'), JSON.stringify(scoresJson));
 };
 
 main();

@@ -1,7 +1,8 @@
 // const {
 //   petJudger,
 //   loopFromOneUpToAnother,
-//   shoutEveryLetter,
+//   shoutEveryLetterForLoop,
+//   shoutArrayMethod,
 //   generateMultiplesOf5ToNum,
 //   isLongArray,
 //   addToFrontOrBack,
@@ -9,6 +10,9 @@
 //   getAllXCoordinates,
 //   carMaker,
 //   getFavoriteChildName,
+//   getPessimisticTotal,
+//   getNamesOfGreedyGnomes,
+//   getAllNumbersFromString,
 //   obliterate,
 // } = require('./from-scratch');
 // const {
