@@ -426,7 +426,7 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('getNamesOfGreedyGnomes - returns an array of the right length', () => {
+  it('getNamesOfGreedyGnomes - returns only the names of the gnomes', () => {
     const gnomes = [
       {
         name: 'Garbeldel',
@@ -481,7 +481,7 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('getNamesOfGreedyGnomes - returns an array of the right length', () => {
+  it('getNamesOfGreedyGnomes - does not use a for loop', () => {
     // We're using regex on the stringified function
     // so that means even a COMMENT can fail this test
     // DO NOT INCLUDE THE WORD "for" OR "while" anywhere in the function
