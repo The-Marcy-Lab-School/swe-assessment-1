@@ -1,6 +1,7 @@
 # Mod 1 Assessment!
 
 - [Before You Start](#before-you-start)
+- [Set Up Your Repository](#set-up-your-repository)
 - [Question 1: petJudger](#question-1-petjudger)
 - [Question 2: loopFromOneUpToAnother](#question-2-loopfromoneuptoanother)
 - [Question 3: shoutEveryLetterForLoop](#question-3-shouteveryletterforloop)
@@ -35,6 +36,17 @@ Some other helpful things:
 - DO NOT DWELL ON ANY SINGLE QUESTION. If you're stuck, move on and come back to it later.
 
 Good luck everyone and when in doubt, *read the tests*!
+
+## Set Up Your Repository
+
+Before starting, run the following commands to install dependencies and create your draft branch.
+
+```
+npm i 
+git checkout draft
+```
+
+When you are done, push your commits to the `draft` branch of GitHub and create a pull request. For a refresher on this process, check out the [Marcy Docs on how to submit an assignment](https://marcylabschool.gitbook.io/marcy-lab-school-docs/fullstack-curriculum/how-tos/working-with-assignments#how-to-work-on-assignments).
 
 ## Question 1: petJudger
 
