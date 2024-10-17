@@ -7,7 +7,7 @@ const {
   shoutArrayMethod,
   generateMultiplesOf5ToNum,
   isLongArray,
-  addToFrontOrBack,
+  appendOrPrepend,
   replaceMiddleValue,
   getAllXCoordinates,
   carMaker,
@@ -16,13 +16,13 @@ const {
   getNamesOfGreedyGnomes,
   getAllNumbersFromString,
   obliterate,
-} = require('./from-scratch');
+} = require('../src/from-scratch');
 
 const testSuiteName = 'From Scratch Tests';
 const scoresDir = path.join(__dirname, '..', 'scores');
 const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
-const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+const log = jest.spyOn(console, 'log').mockImplementation(() => { });
 
 describe(testSuiteName, () => {
   afterEach(jest.clearAllMocks);
@@ -223,37 +223,37 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('addToFrontOrBack - adds value to the front or back of a given arr', () => {
+  it('appendOrPrepend - adds value to the front or back of a given arr', () => {
     const arr1 = [1, 2, 3, 4, 5];
-    addToFrontOrBack(arr1, 6, true);
+    appendOrPrepend(arr1, 6);
     expect(arr1).toEqual([1, 2, 3, 4, 5, 6]);
 
     const arr2 = [1, 2, 3, 4, 5];
-    addToFrontOrBack(arr2, 0, false);
+    appendOrPrepend(arr2, 0, true);
     expect(arr2).toEqual([0, 1, 2, 3, 4, 5]);
 
     const arr3 = [];
-    addToFrontOrBack(arr3, 1, true);
+    appendOrPrepend(arr3, 1);
     expect(arr3).toEqual([1]);
 
     const arr4 = [1, 2, 3, 4, 5];
-    addToFrontOrBack(arr4, '', true);
+    appendOrPrepend(arr4, '');
     expect(arr4).toEqual([1, 2, 3, 4, 5, '']);
 
     const arr5 = ['a', 'b', 'c', 'd'];
-    addToFrontOrBack(arr5, 'z', false);
+    appendOrPrepend(arr5, 'z', true);
     expect(arr5).toEqual(['z', 'a', 'b', 'c', 'd']);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('addToFrontOrBack - handles missing value properly', () => {
+  it('appendOrPrepend - handles missing value properly', () => {
     const arr1 = [1, 2, 3, 4, 5];
     expect(arr1).toEqual([1, 2, 3, 4, 5]);
-    expect(arr1 === addToFrontOrBack(arr1, null)).toBeTruthy();
+    expect(arr1 === appendOrPrepend(arr1, null)).toBeTruthy();
 
     const arr2 = [1, 2, 3, 4, 5];
-    expect(arr2 === addToFrontOrBack(arr2, undefined)).toBeTruthy();
+    expect(arr2 === appendOrPrepend(arr2, undefined)).toBeTruthy();
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
@@ -495,18 +495,6 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('getAllNumbersFromString - returns an array of all digits', () => {
-    expect(getAllNumbersFromString('')).toEqual([]);
-    expect(getAllNumbersFromString('abc')).toEqual([]);
-    expect(getAllNumbersFromString('123')).toEqual(['123']);
-    expect(getAllNumbersFromString('abc123')).toEqual(['123']);
-    expect(getAllNumbersFromString('abc12def3asd45')).toEqual(['12', '3', '45']);
-    expect(getAllNumbersFromString('One fine day ten bees ate two pizza pies')).toEqual([]);
-    expect(getAllNumbersFromString('1 fine day 10 bees ate 2 pizza 3.14s')).toEqual(['1', '10', '2', '3', '14']);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
   it('obliterate - removes all existing properties and adds wasObliterated', () => {
     const obliterated = { wasObliterated: true };
     const obj1 = { a: 1, b: 2, c: 3 };
@@ -523,6 +511,20 @@ describe(testSuiteName, () => {
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
+
+  // remove '.skip' if you want to test this function.
+  it.skip('getAllNumbersFromString - returns an array of all digits', () => {
+    expect(getAllNumbersFromString('')).toEqual([]);
+    expect(getAllNumbersFromString('abc')).toEqual([]);
+    expect(getAllNumbersFromString('123')).toEqual(['123']);
+    expect(getAllNumbersFromString('abc123')).toEqual(['123']);
+    expect(getAllNumbersFromString('abc12def3asd45')).toEqual(['12', '3', '45']);
+    expect(getAllNumbersFromString('One fine day ten bees ate two pizza pies')).toEqual([]);
+    expect(getAllNumbersFromString('1 fine day 10 bees ate 2 pizza 3.14s')).toEqual(['1', '10', '2', '3', '14']);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
 
   // IGNORE PLEASE
   beforeEach(() => scoreCounter.add(expect));

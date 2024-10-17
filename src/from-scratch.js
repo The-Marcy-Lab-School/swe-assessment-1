@@ -16,7 +16,7 @@ const generateMultiplesOf5ToNum = () => {
 const isLongArray = () => {
 };
 
-const addToFrontOrBack = () => {
+const appendOrPrepend = () => {
 };
 
 const replaceMiddleValue = () => {
@@ -51,7 +51,7 @@ module.exports = {
   shoutArrayMethod,
   generateMultiplesOf5ToNum,
   isLongArray,
-  addToFrontOrBack,
+  appendOrPrepend,
   replaceMiddleValue,
   getAllXCoordinates,
   carMaker,

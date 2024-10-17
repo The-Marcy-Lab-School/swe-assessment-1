@@ -4,49 +4,54 @@ const {
   fixVariables,
   doubleAllItemsPurely,
   addChildToParentMutation,
-} = require('./debug');
+} = require('../src/debug');
 
 const testSuiteName = 'Debug Tests';
 const scoresDir = path.join(__dirname, '..', 'scores');
 const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
-const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+const log = jest.spyOn(console, 'log').mockImplementation(() => { });
 
 describe(testSuiteName, () => {
   afterEach(jest.clearAllMocks);
   it('fixVariable - The message is logged and returned correctly', () => {
     const finalLog = "And that's how I feel about the temp!";
 
-    let expectedMsg = 'Pretty chilly.';
+    // invoke the function with a temp of 0
     let result = fixVariables(0);
-    const [[dynamicMsg1], [staticMsg1]] = log.mock.calls;
-    expect(dynamicMsg1).toBe(expectedMsg);
-    expect(staticMsg1).toBe(finalLog);
+    // grab the two console logs invoked by the function
+    let [[firstLog], [secondLog]] = log.mock.calls;
+
+    let expectedMsg = 'Pretty chilly.';
     expect(result).toBe(expectedMsg);
+    expect(firstLog).toBe(expectedMsg);
+    expect(secondLog).toBe(finalLog);
+    // reset the console log counter for the next test
     jest.clearAllMocks();
 
+    // The rest of the tests follow the same pattern.
     result = fixVariables(30);
     expectedMsg = 'Not bad.';
-    const [[dynamicMsg2], [staticMsg2]] = log.mock.calls;
-    expect(dynamicMsg2).toBe(expectedMsg);
-    expect(staticMsg2).toBe(finalLog);
+    [[firstLog], [secondLog]] = log.mock.calls;
     expect(result).toBe(expectedMsg);
+    expect(firstLog).toBe(expectedMsg);
+    expect(secondLog).toBe(finalLog);
     jest.clearAllMocks();
 
     expectedMsg = 'On the hot side.';
     result = fixVariables(70);
-    const [[dynamicMsg3], [staticMsg3]] = log.mock.calls;
-    expect(dynamicMsg3).toBe(expectedMsg);
-    expect(staticMsg3).toBe(finalLog);
+    [[firstLog], [secondLog]] = log.mock.calls;
     expect(result).toBe(expectedMsg);
+    expect(firstLog).toBe(expectedMsg);
+    expect(secondLog).toBe(finalLog);
     jest.clearAllMocks();
 
     expectedMsg = 'I will die of heat.';
     result = fixVariables(100);
-    const [[dynamicMsg4], [staticMsg4]] = log.mock.calls;
-    expect(dynamicMsg4).toBe(expectedMsg);
-    expect(staticMsg4).toBe(finalLog);
+    [[firstLog], [secondLog]] = log.mock.calls;
     expect(result).toBe(expectedMsg);
+    expect(firstLog).toBe(expectedMsg);
+    expect(secondLog).toBe(finalLog);
     jest.clearAllMocks();
 
     scoreCounter.correct(expect); // DO NOT TOUCH

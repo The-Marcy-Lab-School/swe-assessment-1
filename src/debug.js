@@ -1,15 +1,15 @@
 const fixVariables = (temp) => {
   if (temp < 30) {
-    const msg = 'Pretty chilly';
+    const msg = 'Pretty chilly.';
   } else if (temp < 70) {
-    const msg = 'not bad';
+    const msg = 'Not bad.';
   } else if (temp < 100) {
-    const msg = 'On the hot side';
+    const msg = 'On the hot side.';
   } else {
-    const msg = 'I will die of heat';
+    const msg = 'I will die of heat.';
   }
   console.log(msg);
-  console.log("And that's how I feel about the temp  !");
+  console.log("And that's how I feel about the temp!");
   return msg;
 };
 
@@ -21,7 +21,13 @@ const doubleAllItemsPurely = (arr) => {
 };
 
 const addChildToParentMutation = (parent, child) => {
-  const clone = JSON.parse(JSON.stringify(parent));
+  // this is how we can deeply clone any object, even if it contains other objects:
+  // first we convert the parent object into a string
+  // then, we parse it to turn it back into an object
+  const stringifiedObj = JSON.stringify(parent);
+  const clone = JSON.parse(stringifiedObj);
+
+  // push the child object into the clone
   clone.children.push(child);
   return clone;
 };

@@ -8,8 +8,8 @@
     "FrScTe6": "From Scratch Tests shoutArrayMethod - it does not use a loop",
     "FrScTe7": "From Scratch Tests generateMultiplesOf5ToNum - it returns the correct array of numbers",
     "FrScTe8": "From Scratch Tests isLongArray - it returns the correct boolean",
-    "FrScTe9": "From Scratch Tests addToFrontOrBack - adds value to the front or back of a given arr",
-    "FrScTe10": "From Scratch Tests addToFrontOrBack - handles missing value properly",
+    "FrScTe9": "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr",
+    "FrScTe10": "From Scratch Tests appendOrPrepend - handles missing value properly",
     "FrScTe11": "From Scratch Tests replaceMiddleValue - replaces the middle value of the array with the given value",
     "FrScTe12": "From Scratch Tests getAllXCoordinates - returns an array of all x coordinates",
     "FrScTe13": "From Scratch Tests carMaker - returns a car object with right primitive properties",
@@ -19,7 +19,7 @@
     "FrScTe17": "From Scratch Tests getNamesOfGreedyGnomes - returns an array of the right length",
     "FrScTe18": "From Scratch Tests getNamesOfGreedyGnomes - returns only the names of the gnomes",
     "FrScTe19": "From Scratch Tests getNamesOfGreedyGnomes - does not use a for loop",
-    "FrScTe20": "From Scratch Tests getAllNumbersFromString - returns an array of all digits",
+    "FrScTe20": "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated",
     "FrScTe21": "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated",
     "DeTe1": "Debug Tests fixVariable - The message is logged and returned correctly",
     "DeTe2": "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original",
@@ -46,10 +46,12 @@
     "From Scratch Tests getNamesOfGreedyGnomes - returns only the names of the gnomes": "FrScTe18",
     "From Scratch Tests getNamesOfGreedyGnomes - does not use a for loop": "FrScTe19",
     "From Scratch Tests getAllNumbersFromString - returns an array of all digits": "FrScTe20",
-    "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated": "FrScTe21",
+    "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated": "FrScTe20",
     "Debug Tests fixVariable - The message is logged and returned correctly": "DeTe1",
     "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original": "DeTe2",
-    "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array": "DeTe3"
+    "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array": "DeTe3",
+    "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr": "FrScTe9",
+    "From Scratch Tests appendOrPrepend - handles missing value properly": "FrScTe10"
   },
   "testScores": {
     "From Scratch Tests": {
@@ -72,8 +74,7 @@
       "FrScTe17": 0,
       "FrScTe18": 0,
       "FrScTe19": 0,
-      "FrScTe20": 0,
-      "FrScTe21": 0
+      "FrScTe20": 0
     },
     "Debug Tests": {
       "DeTe1": 0,
@@ -82,8 +83,8 @@
     }
   },
   "humanReadable": {
-    "From Scratch Tests": "0/21",
-    "finalTestScore": "FINAL SCORE: 0/24",
+    "From Scratch Tests": "0/20",
+    "finalTestScore": "FINAL SCORE: 0/23",
     "Debug Tests": "0/3"
   }
 }
