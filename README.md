@@ -62,10 +62,75 @@ In `debug.js` we have the `fixVariables()` function that's trying to log and ret
 Could you please fix this so the tests pass?
 
 ### Debug 2: doubleAllItemsPurely,
-In `debug.js` we have `doubleAllItemsPurely()`. It's supposed to be pure, but it's not. Can you fix it so the tests pass?
+
+In `debug.js` we have `doubleAllItemsPurely()` which should take in an array and return a _new array_ with the all of the values of the input array doubled. It's supposed to be pure, but it's not. Can you fix it so the tests pass?
+
+Current Behavior:
+
+```js
+const nums = [1,2,3];
+const doubled = doubleAllItemsPurely(nums)
+console.log(nums);    // [2, 4, 6]
+console.log(doubled); // [2, 4, 6]
+```
+
+Expected Behavior:
+
+```js
+const nums = [1,2,3];
+const doubled = doubleAllItemsPurely(nums)
+console.log(nums);    // [1, 2, 3]
+console.log(doubled); // [2, 4, 6]
+```
 
 ### Debug 3: addChildToParentMutation,
-Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
+Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. 
+
+This function should take in a `parent` object and a `child` and push that `child` into the `parent` object's `children` array.
+
+Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
+
+Current Behavior:
+
+```js
+const child = { name: 'Itzel' };
+const parent = {
+  name: 'Tom',
+  children: [],
+};
+
+addChildToParentMutation(parent, child);
+console.log(parent);
+/* 
+Currently, there is no change to parent, its a pure function
+{
+  name: 'Tom',
+  children: [],
+};
+*/
+```
+
+Expected Behavior:
+
+```js
+const child = { name: 'Itzel' };
+const parent = {
+  name: 'Tom',
+  children: [],
+};
+
+addChildToParentMutation(parent, child);
+console.log(parent);
+/* 
+We should see parent be changed
+{
+  name: 'Tom',
+  children: [
+    { name: 'Itzel' }
+  ],
+};
+*/
+```
 
 ## From Scratch Problems:
 
