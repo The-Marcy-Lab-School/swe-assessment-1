@@ -2,24 +2,26 @@
 
 - [Before You Start](#before-you-start)
 - [Set Up Your Repository](#set-up-your-repository)
-- [Question 1: petJudger](#question-1-petjudger)
-- [Question 2: loopFromOneUpToAnother](#question-2-loopfromoneuptoanother)
-- [Question 3: shoutEveryLetterForLoop](#question-3-shouteveryletterforloop)
-- [Question 4: shoutArrayMethod](#question-4-shoutarraymethod)
-- [Question 5: generateMultiplesOf5ToNum](#question-5-generatemultiplesof5tonum)
-- [Question 6: isLongArray](#question-6-islongarray)
-- [Question 7: appendOrPrepend](#question-7-appendorprepend)
-- [Question 8: replaceMiddleValue](#question-8-replacemiddlevalue)
-- [Question 9: getAllXCoordinates](#question-9-getallxcoordinates)
-- [Question 10: carMaker](#question-10-carmaker)
-- [Question 11: getFavoriteChildName](#question-11-getfavoritechildname)
-- [Question 12: getPessimisticTotal](#question-12-getpessimistictotal)
-- [Question 13: getNamesOfGreedyGnomes](#question-13-getnamesofgreedygnomes)
-- [Question 14: obliterate](#question-14-obliterate)
-- [Question 15: DEBUG - fixVariables](#question-15-debug---fixvariables)
-- [Question 16: DEBUG - doubleAllItemsPurely,](#question-16-debug---doubleallitemspurely)
-- [Question 17: DEBUG - addChildToParentMutation,](#question-17-debug---addchildtoparentmutation)
-- [Question 18 (BONUS): getAllNumbersFromString](#question-18-bonus-getallnumbersfromstring)
+- [Debug Problems:](#debug-problems)
+  - [Debug 1: fixVariables](#debug-1-fixvariables)
+  - [Debug 2: doubleAllItemsPurely,](#debug-2-doubleallitemspurely)
+  - [Debug 3: addChildToParentMutation,](#debug-3-addchildtoparentmutation)
+- [From Scratch Problems:](#from-scratch-problems)
+  - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
+  - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
+  - [From Scratch 3: shoutEveryLetterForLoop](#from-scratch-3-shouteveryletterforloop)
+  - [From Scratch 4: shoutArrayMethod](#from-scratch-4-shoutarraymethod)
+  - [From Scratch 5: generateMultiplesOf5ToNum](#from-scratch-5-generatemultiplesof5tonum)
+  - [From Scratch 6: isLongArray](#from-scratch-6-islongarray)
+  - [From Scratch 7: appendOrPrepend](#from-scratch-7-appendorprepend)
+  - [From Scratch 8: replaceMiddleValue](#from-scratch-8-replacemiddlevalue)
+  - [From Scratch 9: getAllXCoordinates](#from-scratch-9-getallxcoordinates)
+  - [From Scratch 10: carMaker](#from-scratch-10-carmaker)
+  - [From Scratch 11: getFavoriteChildName](#from-scratch-11-getfavoritechildname)
+  - [From Scratch 12: getPessimisticTotal](#from-scratch-12-getpessimistictotal)
+  - [From Scratch 13: getNamesOfGreedyGnomes](#from-scratch-13-getnamesofgreedygnomes)
+  - [From Scratch 14: obliterate](#from-scratch-14-obliterate)
+  - [From Scratch 18 (BONUS): getAllNumbersFromString](#from-scratch-18-bonus-getallnumbersfromstring)
 
 ## Before You Start
 Hello and welcome to the Mod 1 Assessment! Before we continue, we want to ground you in the fact that the goal of this assignment is to help *you*. This is not about grades, it's about finding out what you know and if you still need help in some areas. Attempt as *many* questions as you can, some code is always better than no code!
@@ -48,7 +50,30 @@ git checkout draft
 
 When you are done, push your commits to the `draft` branch of GitHub and create a pull request. For a refresher on this process, check out the [Marcy Docs on how to submit an assignment](https://marcylabschool.gitbook.io/marcy-lab-school-docs/fullstack-curriculum/how-tos/working-with-assignments#how-to-work-on-assignments).
 
-## Question 1: petJudger
+## Debug Problems:
+
+The following problems can be completed within the `src/debug.js` file.
+
+The tests for these problems are found within the `tests/debug.spec.js` file.
+
+### Debug 1: fixVariables
+In `debug.js` we have the `fixVariables()` function that's trying to log and return a message, but isn't working. 
+
+Could you please fix this so the tests pass?
+
+### Debug 2: doubleAllItemsPurely,
+In `debug.js` we have `doubleAllItemsPurely()`. It's supposed to be pure, but it's not. Can you fix it so the tests pass?
+
+### Debug 3: addChildToParentMutation,
+Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
+
+## From Scratch Problems:
+
+The following problems can be completed within the `src/from-scratch.js` file.
+
+The tests for these problems are found within the `tests/from-scratch.spec.js` file.
+
+### From Scratch 1: petJudger
 
 Write a function `petJudger()` that takes 2 args: a string `petBreed` and a string `petName`. It should log the following:
 
@@ -68,7 +93,7 @@ petBreed('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
 petBreed('panda', 'joe'); // Prints "What an...interesting pet."
 ```
 
-## Question 2: loopFromOneUpToAnother
+### From Scratch 2: loopFromOneUpToAnother
 Write a function `loopFromOneUpToAnother()` that takes 2 args: a number `firstNum` and a number `secondNum`. Log out each number, with the first arg being inclusive, and the second arg being exclusive. Use the tests to determine what to do if the numbers are equal or the second is smaller.
 
 This function does not need to return anything.
@@ -82,7 +107,7 @@ loopFromOneUpToAnother(1, 1); // Prints nothing
 loopFromOneUpToAnother(5, 1); // Prints nothing
 ```
 
-## Question 3: shoutEveryLetterForLoop
+### From Scratch 3: shoutEveryLetterForLoop
 
 Using a `for` loop, write a function `shoutEveryLetterForLoop()` that takes a string `str`. It should log each letter capitalized and with a '!' added. Do not use a higher-order method.
 
@@ -102,7 +127,7 @@ shoutEveryLetterForLoop('');
 ```
 
 
-## Question 4: shoutArrayMethod
+### From Scratch 4: shoutArrayMethod
 Alright, without using a `for` or `while` loop, use an **array higher-order method** to write `shoutArrayMethod()` which should output exactly the same logs as `shoutEveryLetterForLoop()`.
 
 This function does not need to return anything.
@@ -118,7 +143,7 @@ shoutArrayMethod('hey');
 shoutArrayMethod('');
 ```
 
-## Question 5: generateMultiplesOf5ToNum
+### From Scratch 5: generateMultiplesOf5ToNum
 Using a `for` loop, write a function `generateMultiplesOf5ToNum()` that takes a number `num`. It should create an array of all multiples of 5 in the given range and return that array. You will always get a number as input and you should always return an array.
 
 ```js
@@ -129,7 +154,7 @@ generateMultiplesOf5ToNum(0); // Returns []
 generateMultiplesOf5ToNum(-1); // Returns []
 ```
 
-## Question 6: isLongArray
+### From Scratch 6: isLongArray
 Write a function `isLongArray()` that takes an array `arr`. If the array is longer than 10 items, return `true`. Otherwise, return `false`.
 
 Example:
@@ -139,7 +164,7 @@ isLongArray([1,1,1,1,1,1,1,1,1,1,1,1,1,1]); // Returns true
 isLongArray([1,2,3,4,5,6,7,8]); // Returns false
 ```
 
-## Question 7: appendOrPrepend
+### From Scratch 7: appendOrPrepend
 Write a function `appendOrPrepend()` that takes 3 args: an array `arr`, a `value` of any type, and a boolean `addToFront`. It should behave in the following ways:
 * If `addToFront` is `true`, insert `value` at the front of the array (a.k.a "prepend"), otherwise insert `value` at the end of the array (a.k.a "append")
 * If `value` is `undefined` or `null`, do not modify the array.
@@ -160,7 +185,7 @@ appendOrPrepend(fruits, null, true); // do nothing when inserting null or undefi
 console.log(fruits); // Prints ['apple', 'banana', 'cherry']
 ```
 
-## Question 8: replaceMiddleValue
+### From Scratch 8: replaceMiddleValue
 Write a function `replaceMiddleValue()` that takes 2 args: an array `arr` and a `value` of any type. The function should find the middle index of the array and then replace the value there with the input `value`.
 
 Example:
@@ -182,7 +207,7 @@ replaceMiddleValue(arr4, 1);
 console.log(arr4); // Prints [1]
 ```
 
-## Question 9: getAllXCoordinates
+### From Scratch 9: getAllXCoordinates
 Write a function `getAllXCoordinates()` that takes an array of arrays called `arrOfCoords`. The given array `arrOfCoords` will hold arrays, each holding a pair or a trio of coordinates.
 
 ```js
@@ -206,7 +231,7 @@ const xCoords2 = getAllXCoordinates(coords2)
 console.log(xCoords2); // Prints [1, 4, 7]
 ```
 
-## Question 10: carMaker
+### From Scratch 10: carMaker
 Write a function `carMaker()` that takes 4 arguments: a string `name`, a string `maker`, a number `year`, and an object `owner`. The function should return an object with 5 properties: 
 * `name` - the provided `name` value
 * `year` - the provided `year` value
@@ -230,7 +255,7 @@ console.log(car);
 */
 ```
 
-## Question 11: getFavoriteChildName
+### From Scratch 11: getFavoriteChildName
 Write a function `getFavoriteChildName()` that takes an object `parent`. The function should return the `name` of the *first* child object in the `parent.children` array. There will *always* be an array, but if it is empty, return `null`.
 
 Example:
@@ -254,7 +279,7 @@ const parent2 = {
 getFavoriteChildName(parent2); // Returns null
 ```
 
-## Question 12: getPessimisticTotal
+### From Scratch 12: getPessimisticTotal
 Write a function `getPessimisticTotal` that takes in an array `nums`. The function should add of the array numbers up and then round that total down to the nearest integer. The function should return that integer.
 
 There will always be an array, but if it is empty, simply return 0.
@@ -271,7 +296,7 @@ getPessimisticTotal([0]); // Returns 0
 getPessimisticTotal([]); // Returns 0
 ```
 
-## Question 13: getNamesOfGreedyGnomes
+### From Scratch 13: getNamesOfGreedyGnomes
 Write a function `getNamesOfGreedyGnomes` that takes in an array `gnomes` of garden gnome objects. Each gnome looks like this:
 
 ```js
@@ -324,7 +349,7 @@ getNamesOfGreedyGnomes(gnomes); // Returns ['Garbeldel', 'Jorbles']
 getNamesOfGreedyGnomes([]); // Returns []
 ```
 
-## Question 14: obliterate
+### From Scratch 14: obliterate
 
 Write a function `obliterate` that takes in an object and removes all of its properties. It should add `wasObliterated` as `true` to the object. It should return nothing.
 
@@ -335,18 +360,7 @@ obliterate(obj1);
 console.log(obj); // Prints { wasObliterated: true };
 ```
 
-## Question 15: DEBUG - fixVariables
-In `debug.js` we have the `fixVariables()` function that's trying to log and return a message, but isn't working. 
-
-Could you please fix this so the tests pass?
-
-## Question 16: DEBUG - doubleAllItemsPurely,
-In `debug.js` we have `doubleAllItemsPurely()`. It's supposed to be pure, but it's not. Can you fix it so the tests pass?
-
-## Question 17: DEBUG - addChildToParentMutation,
-Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
-
-## Question 18 (BONUS): getAllNumbersFromString
+### From Scratch 18 (BONUS): getAllNumbersFromString
 
 If you are done, try out this bonus problem. To test your code, go to `tests/from-scratch.spec.js` and remove `.skip` from `it.skip` on the very last test.
 
