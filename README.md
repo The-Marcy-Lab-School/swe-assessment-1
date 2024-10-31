@@ -45,7 +45,7 @@ Before starting, run the following commands to install dependencies and create y
 
 ```
 npm i 
-git checkout draft
+git checkout -b draft
 ```
 
 When you are done, push your commits to the `draft` branch of GitHub and create a pull request. For a refresher on this process, check out the [Marcy Docs on how to submit an assignment](https://marcylabschool.gitbook.io/marcy-lab-school-docs/fullstack-curriculum/how-tos/working-with-assignments#how-to-work-on-assignments).
