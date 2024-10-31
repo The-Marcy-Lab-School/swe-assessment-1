@@ -297,8 +297,8 @@ console.log(xCoords2); // Prints [1, 4, 7]
 ```
 
 ### From Scratch 10: carMaker
-Write a function `carMaker()` that takes 4 arguments: a string `name`, a string `maker`, a number `year`, and an object `owner`. The function should return an object with 5 properties: 
-* `name` - the provided `name` value
+Write a function `carMaker()` that takes 4 arguments: a string `model`, a string `maker`, a number `year`, and an object `owner`. The function should return an object with 5 properties: 
+* `model` - the provided `model` value
 * `year` - the provided `year` value
 * `maker` - the provided `maker` value
 * `owners` - an array with only one object in it: the `owner` object that was passed in.
@@ -307,11 +307,11 @@ Write a function `carMaker()` that takes 4 arguments: a string `name`, a string 
 Example:
 
 ```js
-const car = carMaker('Bessie', 'Volkswagen', 1990, { name: 'Ron' });
+const car = carMaker('Beetle', 'Volkswagen', 1990, { name: 'Ron' });
 console.log(car);
 /*
 {
-  name: 'Bessie',
+  model: 'Beetle',
   maker: 'Volkswagen',
   year: 1990,
   owners: [{ name: 'Ron' }]
