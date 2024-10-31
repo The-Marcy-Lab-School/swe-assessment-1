@@ -37,11 +37,11 @@ const getPessimisticTotal = () => {
 const getNamesOfGreedyGnomes = () => {
 };
 
-const getAllNumbersFromString = () => {
+const obliterate = () => {
 };
 
 // Do this only after all else
-const obliterate = () => {
+const getAllNumbersFromString = () => {
 };
 
 module.exports = {
