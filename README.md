@@ -154,8 +154,8 @@ This function does not need to return anything.
 Example:
 
 ```js
-petBreed('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
-petBreed('panda', 'joe'); // Prints "What an...interesting pet."
+petJudger('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
+petJudger('panda', 'joe'); // Prints "What an...interesting pet."
 ```
 
 ### From Scratch 2: loopFromOneUpToAnother
