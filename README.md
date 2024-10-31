@@ -86,7 +86,7 @@ console.log(doubled); // [2, 4, 6]
 ### Debug 3: addChildToParentMutation,
 Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. 
 
-This function should take in a `parent` object and a `child` and push that `child` into the `parent` object's `children` array.
+This function should take in a `parent` object and a `child` and push that `child` into the `parent` object's `children` array. It should then return the modified `parent`.
 
 Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
 
