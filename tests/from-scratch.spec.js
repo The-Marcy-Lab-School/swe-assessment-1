@@ -27,44 +27,97 @@ const log = jest.spyOn(console, 'log').mockImplementation(() => { });
 describe(testSuiteName, () => {
   afterEach(jest.clearAllMocks);
   it('petJudger - it logs the correct messages', () => {
-    const expectedBadMessage = 'Please provide a valid pet';
+    let messageLogged, consoleLogCalls;
+
+    // 1. test the function with both values undefined
     petJudger();
-    petJudger('cat');
-    const [[badMessage1], [badMessage2]] = log.mock.calls;
-    expect(badMessage1).toBe(expectedBadMessage);
-    expect(badMessage2).toBe(expectedBadMessage);
+
+    // the function should print only one message
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+
+    // verify that the message printed was the correct message
+    messageLogged = consoleLogCalls[0][0];
+    expect(messageLogged).toBe('Please provide a valid pet');
     jest.clearAllMocks();
 
+    // 2. test the function with just the name undefined
+    petJudger('cat');
+
+    // the function should print only one message
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+
+    // verify that the message printed was the correct message
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe('Please provide a valid pet');
+    jest.clearAllMocks();
+
+    // 3. test the function with 'cat' breed and a random name
     const randomName = (Math.random() + 1).toString(36).slice(2);
     petJudger('cat', randomName);
-    const [message1] = log.mock.calls[0];
-    expect(message1).toBe(`I love cats! ${randomName} is so cute!`);
+
+    // the function should print only one message
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+
+    // verify that the message printed was the correct message
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe(`I love cats! ${randomName} is so cute!`);
     jest.clearAllMocks();
 
+    // and so on...
     petJudger('dog', randomName);
-    const [message2] = log.mock.calls[0];
-    expect(message2).toBe(`I love dogs! ${randomName} is so cute!`);
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe(`I love dogs! ${randomName} is so cute!`);
     jest.clearAllMocks();
 
     petJudger('turtle', randomName);
-    const [message3] = log.mock.calls[0];
-    expect(message3).toBe(`Who doesn't love a good turtle? ${randomName} is the tops.`);
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe(`Who doesn't love a good turtle? ${randomName} is the tops.`);
     jest.clearAllMocks();
 
     petJudger('snake', randomName);
-    const [message4] = log.mock.calls[0];
-    expect(message4).toBe(`Not a fan, please take ${randomName} and leave.`);
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe(`Not a fan, please take ${randomName} and leave.`);
     jest.clearAllMocks();
 
     petJudger('owl', randomName);
-    const [message5] = log.mock.calls[0];
-    expect(message5).toBe('What an...interesting pet.');
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(1);
+    messageLogged = log.mock.calls[0][0];
+    expect(messageLogged).toBe('What an...interesting pet.');
     jest.clearAllMocks();
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('loopFromOneUpToAnother - it logs the correct numbers', () => {
+    // test the function with 5-10
+    loopFromOneUpToAnother(5, 10);
+
+    // we expect the function to have used console.log 5 times
+    expect(log).toHaveBeenCalledTimes(5);
+
+    // we expect the first call to have been `console.log(5)`
+    expect(log).toHaveBeenNthCalledWith(1, 5);
+
+    // we expect the second call to have been `console.log(6)`
+    expect(log).toHaveBeenNthCalledWith(2, 6);
+
+    // and so on...
+    expect(log).toHaveBeenNthCalledWith(3, 7);
+    expect(log).toHaveBeenNthCalledWith(4, 8);
+    expect(log).toHaveBeenNthCalledWith(5, 9);
+    jest.clearAllMocks();
+
+    // test the function with 1-5
     loopFromOneUpToAnother(1, 5);
     expect(log).toHaveBeenCalledTimes(4);
     expect(log).toHaveBeenNthCalledWith(1, 1);
@@ -73,15 +126,7 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(4, 4);
     jest.clearAllMocks();
 
-    loopFromOneUpToAnother(5, 10);
-    expect(log).toHaveBeenCalledTimes(5);
-    expect(log).toHaveBeenNthCalledWith(1, 5);
-    expect(log).toHaveBeenNthCalledWith(2, 6);
-    expect(log).toHaveBeenNthCalledWith(3, 7);
-    expect(log).toHaveBeenNthCalledWith(4, 8);
-    expect(log).toHaveBeenNthCalledWith(5, 9);
-    jest.clearAllMocks();
-
+    // test the function with 10-16
     loopFromOneUpToAnother(10, 16);
     expect(log).toHaveBeenCalledTimes(6);
     expect(log).toHaveBeenNthCalledWith(1, 10);
@@ -92,9 +137,11 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(6, 15);
     jest.clearAllMocks();
 
+    // if start and end are the same, it shouldn't log at all
     loopFromOneUpToAnother(1, 1);
     expect(log).toHaveBeenCalledTimes(0);
 
+    // if start > end, it shouldn't log at all
     loopFromOneUpToAnother(5, 3);
     expect(log).toHaveBeenCalledTimes(0);
 
@@ -103,9 +150,16 @@ describe(testSuiteName, () => {
 
   it('shoutEveryLetterForLoop - it logs the correct letters', () => {
     shoutEveryLetterForLoop('hello');
+    // we expect console.log to have been called 5 times
     expect(log).toHaveBeenCalledTimes(5);
+
+    // we expect the first call to have been `console.log('H!')
     expect(log).toHaveBeenNthCalledWith(1, 'H!');
+
+    // we expect the second call to have been `console.log('E!')
     expect(log).toHaveBeenNthCalledWith(2, 'E!');
+
+    // and so on...
     expect(log).toHaveBeenNthCalledWith(3, 'L!');
     expect(log).toHaveBeenNthCalledWith(4, 'L!');
     expect(log).toHaveBeenNthCalledWith(5, 'O!');
@@ -123,6 +177,7 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(7, 'E!');
     jest.clearAllMocks();
 
+    // no calls for an empty string
     shoutEveryLetterForLoop('');
     expect(log).toHaveBeenCalledTimes(0);
 
@@ -132,7 +187,10 @@ describe(testSuiteName, () => {
   it('shoutEveryLetterForLoop - it uses a for loop', () => {
     // We're using regex on the stringified function
     const strFunc = shoutEveryLetterForLoop.toString();
-    expect(/for\s+\(/gi.test(strFunc)).toBe(true);
+
+    // we expect that your function does use the `for` loop
+    const usesFor = /for\s+\(/gi.test(strFunc);
+    expect(usesFor).toBe(true);
 
     // Repeated test to prevent auto pass
     shoutEveryLetterForLoop('hello');
@@ -175,13 +233,15 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('shoutArrayMethod - it does not use a loop', () => {
+  it('shoutArrayMethod - it does NOT use a for or while loop', () => {
     // We're using regex on the stringified function
     // so that means even a COMMENT can fail this test
     // DO NOT INCLUDE THE WORD "for" OR "while" anywhere in the function
     const strFunc = shoutArrayMethod.toString();
-    expect(/for\s+\(/gi.test(strFunc)).toBe(false);
-    expect(/while\s+\(/gi.test(strFunc)).toBe(false);
+    const usesFor = /for\s+\(/gi.test(strFunc);
+    expect(usesFor).toBe(false);
+    const usesWhile = /while\s+\(/gi.test(strFunc);
+    expect(usesWhile).toBe(false);
 
     // repeated test to prevent auto pass
     shoutArrayMethod('hey');
@@ -224,22 +284,27 @@ describe(testSuiteName, () => {
   });
 
   it('appendOrPrepend - adds value to the front or back of a given arr', () => {
-    const arr1 = [1, 2, 3, 4, 5];
-    appendOrPrepend(arr1, 6);
-    expect(arr1).toEqual([1, 2, 3, 4, 5, 6]);
-
+    // If the boolean is true, prepend
     const arr2 = [1, 2, 3, 4, 5];
     appendOrPrepend(arr2, 0, true);
     expect(arr2).toEqual([0, 1, 2, 3, 4, 5]);
 
+    // if the boolean is "falsy", append
+    const arr1 = [1, 2, 3, 4, 5];
+    appendOrPrepend(arr1, 6);
+    expect(arr1).toEqual([1, 2, 3, 4, 5, 6]);
+
+    // test with appending to an empty array
     const arr3 = [];
     appendOrPrepend(arr3, 1);
     expect(arr3).toEqual([1]);
 
+    // test with appending an empty string
     const arr4 = [1, 2, 3, 4, 5];
     appendOrPrepend(arr4, '');
     expect(arr4).toEqual([1, 2, 3, 4, 5, '']);
 
+    // test with prepending a string
     const arr5 = ['a', 'b', 'c', 'd'];
     appendOrPrepend(arr5, 'z', true);
     expect(arr5).toEqual(['z', 'a', 'b', 'c', 'd']);
@@ -248,6 +313,7 @@ describe(testSuiteName, () => {
   });
 
   it('appendOrPrepend - handles missing value properly', () => {
+    // if the value is null or undefined, the original array should be returned
     const arr1 = [1, 2, 3, 4, 5];
     expect(arr1).toEqual([1, 2, 3, 4, 5]);
     expect(arr1 === appendOrPrepend(arr1, null)).toBeTruthy();
@@ -279,16 +345,40 @@ describe(testSuiteName, () => {
   });
 
   it('getAllXCoordinates - returns an array of all x coordinates', () => {
-    const arr1 = [[1, 2], [3, 4], [5, 6]];
+    const arr1 = [
+      [1, 2],
+      [3, 4],
+      [5, 6]
+    ];
     expect(getAllXCoordinates(arr1)).toEqual([1, 3, 5]);
-    expect(arr1).toEqual([[1, 2], [3, 4], [5, 6]]);
+
+    // expect arr1 to not be modified
+    expect(arr1).toEqual([
+      [1, 2],
+      [3, 4],
+      [5, 6]
+    ]);
 
     // these are [x, y, z] coordinates
-    const arr2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const arr2 = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ];
     expect(getAllXCoordinates(arr2)).toEqual([1, 4, 7]);
-    expect(arr2).toEqual([[1, 2, 3], [4, 5, 6], [7, 8, 9]]);
 
-    const arr3 = [[12.3, 81.3], [1.2, 3.4], [5.6, 7.8]];
+    // expect arr2 to not be modified
+    expect(arr2).toEqual([
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9]
+    ]);
+
+    const arr3 = [
+      [12.3, 81.3],
+      [1.2, 3.4],
+      [5.6, 7.8]
+    ];
     expect(getAllXCoordinates(arr3)).toEqual([12.3, 1.2, 5.6]);
     expect(arr3).toEqual([[12.3, 81.3], [1.2, 3.4], [5.6, 7.8]]);
 

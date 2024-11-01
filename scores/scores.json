@@ -5,7 +5,7 @@
     "FrScTe3": "From Scratch Tests shoutEveryLetterForLoop - it logs the correct letters",
     "FrScTe4": "From Scratch Tests shoutEveryLetterForLoop - it uses a for loop",
     "FrScTe5": "From Scratch Tests shoutArrayMethod - it logs the correct letters without a for loop",
-    "FrScTe6": "From Scratch Tests shoutArrayMethod - it does not use a loop",
+    "FrScTe6": "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop",
     "FrScTe7": "From Scratch Tests generateMultiplesOf5ToNum - it returns the correct array of numbers",
     "FrScTe8": "From Scratch Tests isLongArray - it returns the correct boolean",
     "FrScTe9": "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr",
@@ -51,7 +51,8 @@
     "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original": "DeTe2",
     "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array": "DeTe3",
     "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr": "FrScTe9",
-    "From Scratch Tests appendOrPrepend - handles missing value properly": "FrScTe10"
+    "From Scratch Tests appendOrPrepend - handles missing value properly": "FrScTe10",
+    "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop": "FrScTe6"
   },
   "testScores": {
     "From Scratch Tests": {
