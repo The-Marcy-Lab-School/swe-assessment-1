@@ -45,7 +45,7 @@ Before starting, run the following commands to install dependencies and create y
 
 ```
 npm i 
-git checkout draft
+git checkout -b draft
 ```
 
 When you are done, push your commits to the `draft` branch of GitHub and create a pull request. For a refresher on this process, check out the [Marcy Docs on how to submit an assignment](https://marcylabschool.gitbook.io/marcy-lab-school-docs/fullstack-curriculum/how-tos/working-with-assignments#how-to-work-on-assignments).
@@ -86,7 +86,7 @@ console.log(doubled); // [2, 4, 6]
 ### Debug 3: addChildToParentMutation,
 Conversely, we have `addChildToParentMutation` which *should* mutate the given `parent` object. 
 
-This function should take in a `parent` object and a `child` and push that `child` into the `parent` object's `children` array.
+This function should take in a `parent` object and a `child` and push that `child` into the `parent` object's `children` array. It should then return the modified `parent`.
 
 Instead, it is making a "deep clone" of the `parent` object using `JSON.stringify` and `JSON.parse`. Can you correct this so the tests pass?
 
@@ -154,8 +154,8 @@ This function does not need to return anything.
 Example:
 
 ```js
-petBreed('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
-petBreed('panda', 'joe'); // Prints "What an...interesting pet."
+petJudger('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
+petJudger('panda', 'joe'); // Prints "What an...interesting pet."
 ```
 
 ### From Scratch 2: loopFromOneUpToAnother
@@ -297,8 +297,8 @@ console.log(xCoords2); // Prints [1, 4, 7]
 ```
 
 ### From Scratch 10: carMaker
-Write a function `carMaker()` that takes 4 arguments: a string `name`, a string `maker`, a number `year`, and an object `owner`. The function should return an object with 5 properties: 
-* `name` - the provided `name` value
+Write a function `carMaker()` that takes 4 arguments: a string `model`, a string `maker`, a number `year`, and an object `owner`. The function should return an object with 5 properties: 
+* `model` - the provided `model` value
 * `year` - the provided `year` value
 * `maker` - the provided `maker` value
 * `owners` - an array with only one object in it: the `owner` object that was passed in.
@@ -307,11 +307,11 @@ Write a function `carMaker()` that takes 4 arguments: a string `name`, a string 
 Example:
 
 ```js
-const car = carMaker('Bessie', 'Volkswagen', 1990, { name: 'Ron' });
+const car = carMaker('Beetle', 'Volkswagen', 1990, { name: 'Ron' });
 console.log(car);
 /*
 {
-  name: 'Bessie',
+  model: 'Beetle',
   maker: 'Volkswagen',
   year: 1990,
   owners: [{ name: 'Ron' }]
