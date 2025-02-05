@@ -84,9 +84,13 @@ describe(testSuiteName, () => {
       children: [child1],
     };
 
-    expect(addChildToParentMutation(parent1, child1)).toEqual(parent1Outcome);
+    const mutatedResult1 = addChildToParentMutation(parent1, child1)
+    // the returned object should match the outcome
+    expect(mutatedResult1).toEqual(parent1Outcome);
+    // parent1 should be mutated too
     expect(parent1).toEqual(parent1Outcome);
 
+    // Testing with another set of data
     const child2 = { name: 'Itzel' };
     const child3 = { name: 'Zo' };
     const parent2 = {
