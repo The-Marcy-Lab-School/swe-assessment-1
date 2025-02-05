@@ -80,7 +80,7 @@ describe(testSuiteName, () => {
       children: [],
     };
     const parent1Outcome = {
-      ...parent1,
+      name: 'Tom',
       children: [child1],
     };
 
@@ -98,7 +98,7 @@ describe(testSuiteName, () => {
       children: [child2],
     };
     const parent2Outcome = {
-      ...parent2,
+      name: 'Greg',
       children: [child2, child3],
     };
 
