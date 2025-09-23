@@ -3,7 +3,7 @@ const ScoreCounter = require('score-tests');
 const {
   fixVariables,
   doubleAllItemsPurely,
-  addChildToParentMutation,
+  getUpdatedParent,
 } = require('../src/debug');
 
 const testSuiteName = 'Debug Tests';
@@ -73,37 +73,35 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it("addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array", () => {
-    const child1 = { name: 'Itzel' };
+  it("getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array", () => {
     const parent1 = {
       name: 'Tom',
-      children: [],
+      children: ['alice', 'ben', 'charlie'],
     };
     const parent1Outcome = {
       name: 'Tom',
-      children: [child1],
+      children: ['alice', 'ben', 'charlie', 'dylan'],
     };
 
-    const mutatedResult1 = addChildToParentMutation(parent1, child1)
-    // the returned object should match the outcome
-    expect(mutatedResult1).toEqual(parent1Outcome);
-    // parent1 should be mutated too
-    expect(parent1).toEqual(parent1Outcome);
+    const result1 = getUpdatedParent(parent1, 'dylan')
+    // the returned object should match the outcome.
+    expect(result1).toEqual(parent1Outcome);
+
+    // parent1 should NOT be mutated. It should be the same as before.
+    expect(parent1).not.toEqual(parent1Outcome);
 
     // Testing with another set of data
-    const child2 = { name: 'Itzel' };
-    const child3 = { name: 'Zo' };
     const parent2 = {
       name: 'Greg',
-      children: [child2],
+      children: ['a', 'b', 'c', 'd', 'e'],
     };
     const parent2Outcome = {
       name: 'Greg',
-      children: [child2, child3],
+      children: ['a', 'b', 'c', 'd', 'e', 'f'],
     };
 
-    expect(addChildToParentMutation(parent2, child3)).toEqual(parent2Outcome);
-    expect(parent2).toEqual(parent2Outcome);
+    expect(getUpdatedParent(parent2, 'f')).toEqual(parent2Outcome);
+    expect(parent2).not.toEqual(parent2Outcome);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });

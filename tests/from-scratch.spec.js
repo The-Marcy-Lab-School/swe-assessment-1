@@ -29,44 +29,38 @@ describe(testSuiteName, () => {
   it('petJudger - it logs the correct messages', () => {
     let messageLogged, consoleLogCalls;
 
-    // 1. test the function with both values undefined
+    // 1. test the function with both the breed and the name undefined
     petJudger();
 
-    // the function should print only one message
+    // this is an array of all the console.log calls
     consoleLogCalls = log.mock.calls;
+
+    // the function should print only one message
     expect(consoleLogCalls.length).toBe(1);
 
     // verify that the message printed was the correct message
     messageLogged = consoleLogCalls[0][0];
-    expect(messageLogged).toBe('Please provide a valid pet');
+    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
     jest.clearAllMocks();
 
-    // 2. test the function with just the name undefined
+    // 2. test the function with the breed but the name is undefined
     petJudger('cat');
-
-    // the function should print only one message
     consoleLogCalls = log.mock.calls;
     expect(consoleLogCalls.length).toBe(1);
-
-    // verify that the message printed was the correct message
     messageLogged = log.mock.calls[0][0];
-    expect(messageLogged).toBe('Please provide a valid pet');
+    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
     jest.clearAllMocks();
 
-    // 3. test the function with 'cat' breed and a random name
+    // 3. test the function with 'cat' breed and a random name 
     const randomName = (Math.random() + 1).toString(36).slice(2);
     petJudger('cat', randomName);
-
-    // the function should print only one message
     consoleLogCalls = log.mock.calls;
     expect(consoleLogCalls.length).toBe(1);
-
-    // verify that the message printed was the correct message
     messageLogged = log.mock.calls[0][0];
     expect(messageLogged).toBe(`I love cats! ${randomName} is so cute!`);
     jest.clearAllMocks();
 
-    // and so on...
+    // test the remaining breeds with the random name.
     petJudger('dog', randomName);
     consoleLogCalls = log.mock.calls;
     expect(consoleLogCalls.length).toBe(1);

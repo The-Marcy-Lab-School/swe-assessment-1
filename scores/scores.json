@@ -18,12 +18,12 @@
     "FrScTe16": "From Scratch Tests getPessimisticTotal - adds up all the given numbers to a total and then rounds down to the nearest int",
     "FrScTe17": "From Scratch Tests getNamesOfGreedyGnomes - returns an array of the right length",
     "FrScTe18": "From Scratch Tests getNamesOfGreedyGnomes - returns only the names of the gnomes",
-    "FrScTe19": "From Scratch Tests getNamesOfGreedyGnomes - does not use a for loop",
+    "FrScTe19": "From Scratch Tests getNamesOfGreedyGnomes - does not use a for or while loop",
     "FrScTe20": "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated",
     "FrScTe21": "From Scratch Tests obliterate - removes all existing properties and adds wasObliterated",
     "DeTe1": "Debug Tests fixVariable - The message is logged and returned correctly",
     "DeTe2": "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original",
-    "DeTe3": "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array"
+    "DeTe3": "Debug Tests getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array"
   },
   "testNameToIdHash": {
     "From Scratch Tests petJudger - it logs the correct messages": "FrScTe1",
@@ -52,7 +52,9 @@
     "Debug Tests addChildToParentMutation - mutates the parent by adding a child to the tail of the parent's array": "DeTe3",
     "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr": "FrScTe9",
     "From Scratch Tests appendOrPrepend - handles missing value properly": "FrScTe10",
-    "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop": "FrScTe6"
+    "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop": "FrScTe6",
+    "Debug Tests getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array": "DeTe3",
+    "From Scratch Tests getNamesOfGreedyGnomes - does not use a for or while loop": "FrScTe19"
   },
   "testScores": {
     "From Scratch Tests": {

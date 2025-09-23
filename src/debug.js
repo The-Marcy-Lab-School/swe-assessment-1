@@ -20,20 +20,20 @@ const doubleAllItemsPurely = (arr) => {
   return arr;
 };
 
-const addChildToParentMutation = (parent, child) => {
-  // this is how we can deeply clone any object, even if it contains other objects:
-  // first we convert the parent object into a string
-  // then, we parse it to turn it back into an object
-  const stringifiedObj = JSON.stringify(parent);
-  const clone = JSON.parse(stringifiedObj);
+const getUpdatedParent = (parent, child) => {
+  // Copy the values of the parent object into a new object
+  const clone = { ...parent };
 
-  // push the child object into the clone
+  // Push the child object into the clone.
+  // Hopefully the original parent object is not mutated too ¯\_(ツ)_/¯.
   clone.children.push(child);
+
+  // Return the clone.
   return clone;
 };
 
 module.exports = {
   fixVariables,
   doubleAllItemsPurely,
-  addChildToParentMutation,
+  getUpdatedParent,
 };
