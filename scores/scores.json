@@ -1,17 +1,17 @@
 {
   "idToTestNameHash": {
-    "FrScTe1": "From Scratch Tests petJudger - it logs the correct messages",
-    "FrScTe2": "From Scratch Tests loopFromOneUpToAnother - it logs the correct numbers",
-    "FrScTe3": "From Scratch Tests shoutEveryLetterForLoop - it logs the correct letters",
-    "FrScTe4": "From Scratch Tests shoutEveryLetterForLoop - it uses a for loop",
-    "FrScTe5": "From Scratch Tests shoutArrayMethod - it logs the correct letters without a for loop",
-    "FrScTe6": "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop",
-    "FrScTe7": "From Scratch Tests generateMultiplesOf5ToNum - it returns the correct array of numbers",
-    "FrScTe8": "From Scratch Tests isLongArray - it returns the correct boolean",
-    "FrScTe9": "From Scratch Tests appendOrPrepend - adds value to the front or back of a given arr",
-    "FrScTe10": "From Scratch Tests appendOrPrepend - handles missing value properly",
-    "FrScTe11": "From Scratch Tests replaceMiddleValue - replaces the middle value of the array with the given value",
-    "FrScTe12": "From Scratch Tests getAllXCoordinates - returns an array of all x coordinates",
+    "FrScTe1": "From Scratch Tests From Scratch 1: petJudger - handles missing arguments",
+    "FrScTe2": "From Scratch Tests From Scratch 1: petJudger - handles missing name argument",
+    "FrScTe3": "From Scratch Tests From Scratch 1: petJudger - handles different breeds with valid name",
+    "FrScTe4": "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - it logs the correct numbers",
+    "FrScTe5": "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - handles equal start and end",
+    "FrScTe6": "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - handles start greater than end",
+    "FrScTe7": "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it logs the correct letters",
+    "FrScTe8": "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - handles empty string",
+    "FrScTe9": "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it uses a for loop",
+    "FrScTe10": "From Scratch Tests From Scratch 4: letterCaseCounts - it correctly counts the letter cases",
+    "FrScTe11": "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length",
+    "FrScTe12": "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes",
     "FrScTe13": "From Scratch Tests carMaker - returns a car object with right primitive properties",
     "FrScTe14": "From Scratch Tests carMaker - returns a car object with the owner passed into the owners array",
     "FrScTe15": "From Scratch Tests getFavoriteChildName - returns the name of the first child",
@@ -54,7 +54,19 @@
     "From Scratch Tests appendOrPrepend - handles missing value properly": "FrScTe10",
     "From Scratch Tests shoutArrayMethod - it does NOT use a for or while loop": "FrScTe6",
     "Debug Tests getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array": "DeTe3",
-    "From Scratch Tests getNamesOfGreedyGnomes - does not use a for or while loop": "FrScTe19"
+    "From Scratch Tests getNamesOfGreedyGnomes - does not use a for or while loop": "FrScTe19",
+    "From Scratch Tests From Scratch 1: petJudger - handles missing arguments": "FrScTe1",
+    "From Scratch Tests From Scratch 1: petJudger - handles missing name argument": "FrScTe2",
+    "From Scratch Tests From Scratch 1: petJudger - handles different breeds with valid name": "FrScTe3",
+    "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - it logs the correct numbers": "FrScTe4",
+    "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - handles equal start and end": "FrScTe5",
+    "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - handles start greater than end": "FrScTe6",
+    "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it logs the correct letters": "FrScTe7",
+    "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - handles empty string": "FrScTe8",
+    "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it uses a for loop": "FrScTe9",
+    "From Scratch Tests From Scratch 4: letterCaseCounts - it correctly counts the letter cases": "FrScTe10",
+    "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length": "FrScTe11",
+    "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes": "FrScTe12"
   },
   "testScores": {
     "From Scratch Tests": {
@@ -62,22 +74,14 @@
       "FrScTe2": 0,
       "FrScTe3": 0,
       "FrScTe4": 0,
-      "FrScTe5": 0,
-      "FrScTe6": 0,
+      "FrScTe5": 1,
+      "FrScTe6": 1,
       "FrScTe7": 0,
-      "FrScTe8": 0,
+      "FrScTe8": 1,
       "FrScTe9": 0,
       "FrScTe10": 0,
       "FrScTe11": 0,
-      "FrScTe12": 0,
-      "FrScTe13": 0,
-      "FrScTe14": 0,
-      "FrScTe15": 0,
-      "FrScTe16": 0,
-      "FrScTe17": 0,
-      "FrScTe18": 0,
-      "FrScTe19": 0,
-      "FrScTe20": 0
+      "FrScTe12": 0
     },
     "Debug Tests": {
       "DeTe1": 0,
@@ -86,8 +90,8 @@
     }
   },
   "humanReadable": {
-    "From Scratch Tests": "0/20",
-    "finalTestScore": "FINAL SCORE: 0/23",
+    "From Scratch Tests": "3/12",
+    "finalTestScore": "FINAL SCORE: 3/15",
     "Debug Tests": "0/3"
   }
 }
