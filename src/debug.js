@@ -1,3 +1,16 @@
+/*
+  Fix the bugs in the following functions!
+
+  Read the comments to understand what each function should do.
+  Run the tests to see what's failing.
+  Fix the code to make all tests pass.
+*/
+
+// ============================================
+// Question 1: fixVariables
+// ============================================
+// This function should print and return a message based on temperature
+
 const fixVariables = (temp) => {
   if (temp < 30) {
     const msg = 'Pretty chilly.';
@@ -13,6 +26,12 @@ const fixVariables = (temp) => {
   return msg;
 };
 
+// ============================================
+// Question 2: doubleAllItemsPurely
+// ============================================
+// This function should return a NEW array with all values doubled
+// It should NOT mutate the original array
+
 const doubleAllItemsPurely = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i] * 2;
@@ -20,17 +39,21 @@ const doubleAllItemsPurely = (arr) => {
   return arr;
 };
 
+// ============================================
+// Question 3: getUpdatedParent
+// ============================================
+// This function should return a new parent object with the child added
+// It should NOT mutate the original parent object
+
 const getUpdatedParent = (parent, child) => {
-  // Copy the values of the parent object into a new object
   const clone = { ...parent };
-
-  // Push the child object into the clone.
-  // Hopefully the original parent object is not mutated too ¯\_(ツ)_/¯.
   clone.children.push(child);
-
-  // Return the clone.
   return clone;
 };
+
+// ============================================
+// Exports
+// ============================================
 
 module.exports = {
   fixVariables,

@@ -1,4 +1,3 @@
-
 const user = {
   name: 'John',
   hobbies: ['reading', 'coding', 'gaming'],

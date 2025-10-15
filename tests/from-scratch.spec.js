@@ -19,12 +19,15 @@ describe(testSuiteName, () => {
 
   it('From Scratch 1: petJudger - handles missing arguments', () => {
     petJudger();
-    const consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged] = consoleLogCalls[0];
-    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
-    jest.clearAllMocks();
+    const logsExpected = 1;
 
+    const consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(logsExpected);
+
+    const [messageLogged] = consoleLogCalls[logsExpected - 1];
+    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
+
+    jest.clearAllMocks();
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
@@ -41,40 +44,43 @@ describe(testSuiteName, () => {
 
   it('From Scratch 1: petJudger - handles different breeds with valid name', () => {
     const randomName = (Math.random() + 1).toString(36).slice(2);
+    const logsExpected = 1;
+    let messageLogged;
+    let consoleLogCalls;
 
     petJudger('cat', randomName);
-    let consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged] = consoleLogCalls[0];
+    consoleLogCalls = log.mock.calls;
+    expect(consoleLogCalls.length).toBe(logsExpected);
+    [messageLogged] = consoleLogCalls[logsExpected - 1];
     expect(messageLogged).toBe(`I love cats! ${randomName} is so cute!`);
     jest.clearAllMocks();
 
     petJudger('dog', randomName);
     consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged2] = consoleLogCalls[0];
-    expect(messageLogged2).toBe(`I love dogs! ${randomName} is so cute!`);
+    expect(consoleLogCalls.length).toBe(logsExpected);
+    [messageLogged] = consoleLogCalls[logsExpected - 1];
+    expect(messageLogged).toBe(`I love dogs! ${randomName} is so cute!`);
     jest.clearAllMocks();
 
     petJudger('turtle', randomName);
     consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged3] = consoleLogCalls[0];
-    expect(messageLogged3).toBe(`Who doesn't love a good turtle? ${randomName} is the tops.`);
+    expect(consoleLogCalls.length).toBe(logsExpected);
+    [messageLogged] = consoleLogCalls[logsExpected - 1];
+    expect(messageLogged).toBe(`Who doesn't love a good turtle? ${randomName} is the tops.`);
     jest.clearAllMocks();
 
     petJudger('snake', randomName);
     consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged4] = consoleLogCalls[0];
-    expect(messageLogged4).toBe(`Not a fan, please take ${randomName} and leave.`);
+    expect(consoleLogCalls.length).toBe(logsExpected);
+    [messageLogged] = consoleLogCalls[logsExpected - 1];
+    expect(messageLogged).toBe(`Not a fan, please take ${randomName} and leave.`);
     jest.clearAllMocks();
 
     petJudger('owl', randomName);
     consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged5] = consoleLogCalls[0];
-    expect(messageLogged5).toBe('What an...interesting pet.');
+    expect(consoleLogCalls.length).toBe(logsExpected);
+    [messageLogged] = consoleLogCalls[logsExpected - 1];
+    expect(messageLogged).toBe('What an...interesting pet.');
     jest.clearAllMocks();
 
     scoreCounter.correct(expect); // DO NOT TOUCH
@@ -119,20 +125,16 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(6, 15);
     jest.clearAllMocks();
 
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 2: loopFromOneUpToAnother - handles equal start and end', () => {
+    // handles equal start and end
     loopFromOneUpToAnother(1, 1);
     expect(log).toHaveBeenCalledTimes(0);
     jest.clearAllMocks();
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
 
-  it('From Scratch 2: loopFromOneUpToAnother - handles start greater than end', () => {
+    // handles start greater than end
     loopFromOneUpToAnother(5, 3);
     expect(log).toHaveBeenCalledTimes(0);
     jest.clearAllMocks();
+
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
@@ -165,10 +167,6 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(7, 'E!');
     jest.clearAllMocks();
 
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 3: shoutEveryLetterForLoop - handles empty string', () => {
     // no calls for an empty string
     shoutEveryLetterForLoop('');
     expect(log).toHaveBeenCalledTimes(0);

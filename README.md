@@ -74,7 +74,7 @@ mod-1-assessment/
 ├── README.md                          # This file - your instructions
 ├── package.json                       # Node package configuration
 ├── .eslintrc.json                     # Linting rules
-├── short-response.md                  # Section 1: Answer questions here
+├── src/short-response.md                  # Section 1: Answer questions here
 ├── src/
 │   ├── from-scratch.js               # Section 2: Write functions here
 │   ├── debug.js                      # Section 3: Fix bugs here
@@ -143,11 +143,11 @@ npm run lint
 ### Submission Instructions
 
 **Submission Checklist:**
-- [ ] All questions in `short-response.md` are answered
+- [ ] All questions in `src/short-response.md` are answered
 - [ ] All functions in `src/from-scratch.js` are written
 - [ ] All bugs in `src/debug.js` are fixed
 - [ ] All bugs in `src/modify-with-video.js` are fixed
-- [ ] Video is recorded and link is added to `short-response.md`
+- [ ] Video is recorded and link is added to `src/short-response.md`
 - [ ] Run `npm test` - as many tests as possible should pass
 - [ ] Run `npm run lint` - fix any errors
 - [ ] Remove any `console.log` statements used for debugging
@@ -156,17 +156,20 @@ npm run lint
 **How to Submit:**
 
 1. Commit your changes:
-   ```bash
-   git add .
-   git commit -m "Complete Mod 1 Assessment"
-   ```
+  
+    ```bash
+    git add .
+    git commit -m "Complete Mod 1 Assessment"
+    ```
 
 2. Push to GitHub:
-   ```bash
-   git push origin main
-   ```
+   
+    ```bash
+    git push origin main
+    ```
 
 3. Submit on Canvas:
+
    - Submit the link to your GitHub repository
    - Double-check that your latest code is visible on GitHub
 
@@ -250,10 +253,11 @@ If you have questions about the instructions (not the content), ask an instructo
 
 ## Section 1: Short Response (48 points)
 
-**File:** `short-response.md`
+**File:** `src/short-response.md`
 
 **Instructions:**
-1. Open `short-response.md`
+
+1. Open `src/short-response.md`
 2. Answer all 8 questions directly in the markdown file
 3. Use proper markdown formatting:
    - Wrap code in triple backticks (\`\`\`javascript)
@@ -261,7 +265,9 @@ If you have questions about the instructions (not the content), ask an instructo
 4. Check your spelling and grammar
 5. Be sure to answer ALL parts of each question
 
-**Grading:** You can earn up to 6 points on each question
+**Grading:** 
+
+You can earn up to 6 points on each question
 - Technical Score (3 points): Accuracy, completeness, proper terminology
 - Writing Quality (3 points): Grammar, spelling, markdown formatting, clarity
 
@@ -400,9 +406,11 @@ Answer the following questions:
   ```
 4. Make sure your code is clean and readable
 
-**Grading:** You can earn up to 4 points on each question:
-- **Algorithm Score (3 points):** Does your code pass all tests?
-- **Code Style (1 point):** Clean code with no linting errors, descriptive variable names, no unused code
+**Grading:** 
+
+You can earn up to 4 points on each question:
+- Algorithm Score (3 points): Does your code pass all tests?
+- Code Style (1 point): Clean code with no linting errors, descriptive variable names, no unused code
 
 **Tips:**
 - Read the instructions carefully - pay attention to exact wording
@@ -564,8 +572,10 @@ getNamesOfGreedyGnomes([]); // Returns []
    npm test debug
    ```
 
-**Grading:** You can earn up to 1 point on each question.
-- **1 point per passing test** (auto-graded)
+**Grading**
+
+You can earn up to 1 point on each question.
+- 1 point per passing test (auto-graded)
 
 **Tips:**
 - Read the comments in the file - they explain what's wrong
@@ -674,7 +684,9 @@ The original parent is NOT changed
 
 **File:** `src/modify-with-video.js`
 
-**Grading:** You can earn up to 10 points for this question.
+**Grading:** 
+
+You can earn up to 10 points for this question.
 - Bug Identification (3 points): 1 point per bug correctly identified
 - Bug Fixes (3 points): 1 point per working fix
 - Video Quality (4 points):
@@ -684,6 +696,7 @@ The original parent is NOT changed
   - Conciseness - stays within time limit (1 point)
 
 **Tips:**
+
 - Do the code analysis BEFORE fixing anything - you need to explain what was wrong
 - Write down your bugs before recording
 - Practice what you'll say before recording
@@ -693,15 +706,13 @@ The original parent is NOT changed
 ### Part 1: Code Analysis (Do this FIRST, before fixing anything)
 1. Open `src/modify-with-video.js`
 2. Read the code carefully
-3. Run the code to see what happens:
+3. Answer these questions (write them down - you'll need them for your video):
+   - What do you expect `players` and `getTopScorer()` to be the first time they are printed?
+   - What do you expect `players` and `getTopScorer()` to be the second time they are printed, after the scores have been reset?
+4. Run the code to see what happens:
    ```bash
    node src/modify-with-video.js
    ```
-4. Answer these questions (write them down - you'll need them for your video):
-   - What do you expect `console.log(players)` to print?
-   - What does it actually print?
-   - What do you expect `console.log(getTopScorer())` to print?
-   - What does it actually print?
 
 ### Part 2: Find and Fix Bugs
 1. Identify **3 bugs** in the code
@@ -720,7 +731,8 @@ The original parent is NOT changed
    ```
 
 ### Part 3: Record Your Video (2-4 minutes)
-1. Use **Loom** or **Zoom** to record your screen
+1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
+   
 2. In your video, explain:
    - What you expected the code to do (from Part 1)
    - The 3 bugs you found:
@@ -728,10 +740,13 @@ The original parent is NOT changed
      - What's wrong
      - Why it causes a problem
    - The fixes you implemented
+   
 3. Use proper technical vocabulary:
    - ✅ "greater than operator" (not "right arrow")
    - ✅ "assignment operator" (not "equal sign")
    - ✅ "strict equality operator" (not "three equal signs")
    - ✅ "array index", "object property", "loop condition"
+
 4. Keep your video between 2-4 minutes
-5. Upload your video and add the link to `short-response.md` (there's a section for it)
+
+5. Upload your video and add the link to `src/short-response.md` (there's a section for it at the bottom)
