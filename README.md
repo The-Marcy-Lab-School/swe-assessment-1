@@ -15,7 +15,7 @@
     - [For the Video:](#for-the-video)
   - [FAQ](#faq)
   - [Good Luck! 🚀](#good-luck-)
-- [Section 1: Short Response (48 points)](#section-1-short-response-48-points)
+- [Section 1: Short Response](#section-1-short-response)
   - [Question 1](#question-1)
   - [Question 2](#question-2)
   - [Question 3](#question-3)
@@ -24,17 +24,17 @@
   - [Question 6](#question-6)
   - [Question 7](#question-7)
   - [Question 8](#question-8)
-- [Section 2: Coding Fluency (20 points)](#section-2-coding-fluency-20-points)
+- [Section 2: Coding Fluency](#section-2-coding-fluency)
   - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
   - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
   - [From Scratch 3: shoutEveryLetterForLoop](#from-scratch-3-shouteveryletterforloop)
   - [From Scratch 4: letterCaseCounts](#from-scratch-4-lettercasecounts)
   - [From Scratch 5: getNamesOfGreedyGnomes](#from-scratch-5-getnamesofgreedygnomes)
-- [Section 3: Simple Debugging (3 points)](#section-3-simple-debugging-3-points)
+- [Section 3: Simple Debugging](#section-3-simple-debugging)
   - [Debug 1: fixVariables](#debug-1-fixvariables)
   - [Debug 2: doubleAllItemsPurely](#debug-2-doubleallitemspurely)
   - [Debug 3: getUpdatedParent](#debug-3-getupdatedparent)
-- [Section 4: Complex Debugging + Video (10 points)](#section-4-complex-debugging--video-10-points)
+- [Section 4: Complex Debugging + Video](#section-4-complex-debugging--video)
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
   - [Part 2: Find and Fix Bugs](#part-2-find-and-fix-bugs)
   - [Part 3: Record Your Video (2-4 minutes)](#part-3-record-your-video-2-4-minutes)
@@ -251,7 +251,7 @@ A: Talk to your instructor about retake options.
 
 If you have questions about the instructions (not the content), ask an instructor.
 
-## Section 1: Short Response (48 points)
+## Section 1: Short Response
 
 **File:** `src/short-response.md`
 
@@ -393,7 +393,7 @@ Answer the following questions:
 
 ---
 
-## Section 2: Coding Fluency (20 points)
+## Section 2: Coding Fluency
 
 **File:** `src/from-scratch.js`
 
@@ -561,7 +561,7 @@ getNamesOfGreedyGnomes(gnomes); // Returns ['Garbeldel', 'Jorbles']
 getNamesOfGreedyGnomes([]); // Returns []
 ```
 
-## Section 3: Simple Debugging (3 points)
+## Section 3: Simple Debugging
 
 **File:** `src/debug.js`
 
@@ -681,7 +681,7 @@ The original parent is NOT changed
 */
 ```
 
-## Section 4: Complex Debugging + Video (10 points)
+## Section 4: Complex Debugging + Video
 
 **File:** `src/modify-with-video.js`
 
