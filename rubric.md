@@ -1,10 +1,18 @@
 # Mod 1 Assessment: Grading Rubric
 
-**Total Points: 85 points**
+## GRADING SUMMARY
+
+| Section | Questions | Points per Question | Total Points | Percentage |
+|---------|-----------|---------------------|--------------|------------|
+| Section 1: Short Response | 8 | 6 | 48 | ~59% |
+| Section 2: Coding Fluency | 5 | 4 | 20 | ~25% |
+| Section 3: Simple Debugging | 3 | 1 | 3 | ~4% |
+| Section 4: Complex Debugging Video | 1 | 10 | 10 | ~12% |
+| **TOTAL** | **7** | — | **81** | **100%** |
 
 ---
 
-## SECTION 1: SHORT RESPONSE (48 points, ~56%)
+## SECTION 1: SHORT RESPONSE (48 points)
 
 **8 questions × 6 points each = 48 points**
 
@@ -35,9 +43,9 @@ Writing Quality does not include correctness, required terminology, or conceptua
 
 ---
 
-## SECTION 2: CODING FLUENCY CHECK (24 points, ~28%)
+## SECTION 2: CODING FLUENCY CHECK (20 points)
 
-**6 questions × 4 points each = 24 points**
+**5 questions × 4 points each = 20 points**
 
 Each question is graded on two components:
 
@@ -61,7 +69,7 @@ Code style points may only be awarded for problems that have been attempted. If 
 
 ---
 
-## SECTION 3: SIMPLE DEBUGGING (3 points, ~4%)
+## SECTION 3: SIMPLE DEBUGGING (3 points)
 
 **3 questions × 1 point each = 3 points**
 
@@ -74,7 +82,7 @@ Code style points may only be awarded for problems that have been attempted. If 
 
 ---
 
-## SECTION 4: COMPLEX DEBUGGING + VERBAL COMMUNICATION (10 points, ~12%)
+## SECTION 4: COMPLEX DEBUGGING + VERBAL COMMUNICATION (10 points)
 
 **1 video submission = 10 points**
 
@@ -102,15 +110,3 @@ Code style points may only be awarded for problems that have been attempted. If 
 | **Completeness** | 1 point | Addresses all parts of the prompt (identifies bugs, explains why they cause issues, describes fixes) |
 | **Clarity** | 1 point | Explanation is easy to follow with logical order; viewer can understand without confusion |
 | **Conciseness** | 1 point | Stays within 2-4 minute time limit; no excessive rambling; gets to the point |
-
----
-
-## GRADING SUMMARY
-
-| Section | Questions | Points per Question | Total Points | Percentage |
-|---------|-----------|---------------------|--------------|------------|
-| Section 1: Short Response | 8 | 6 | 48 | ~56% |
-| Section 2: Coding Fluency | 6 | 4 | 24 | ~28% |
-| Section 3: Simple Debugging | 3 | 1 | 3 | ~4% |
-| Section 4: Complex Debugging Video | 1 | 10 | 10 | ~12% |
-| **TOTAL** | **18** | — | **85** | **100%** |
