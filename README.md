@@ -16,7 +16,15 @@
   - [FAQ](#faq)
   - [Good Luck! 🚀](#good-luck-)
 - [Section 1: Short Response (48 points)](#section-1-short-response-48-points)
-- [Section 2: Coding Fluency (24 points)](#section-2-coding-fluency-24-points)
+  - [Question 1](#question-1)
+  - [Question 2](#question-2)
+  - [Question 3](#question-3)
+  - [Question 4](#question-4)
+  - [Question 5](#question-5)
+  - [Question 6](#question-6)
+  - [Question 7](#question-7)
+  - [Question 8](#question-8)
+- [Section 2: Coding Fluency (20 points)](#section-2-coding-fluency-20-points)
   - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
   - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
   - [From Scratch 3: shoutEveryLetterForLoop](#from-scratch-3-shouteveryletterforloop)
@@ -36,13 +44,13 @@ Welcome to your first module assessment! This assessment tests your understandin
 ## Assessment Overview
 
 **Total Time:** 6 hours  
-**Total Points:** 85 points  
+**Total Points:** 81 points  
 **Passing Requirements:** You must pass this assessment to continue in the program. Retakes are available if needed.
 
 ### Sections:
 
 1. **Short Response** (48 points) - Answer questions about JavaScript concepts
-2. **Coding Fluency** (24 points) - Write functions from scratch
+2. **Coding Fluency** (20 points) - Write functions from scratch
 3. **Simple Debugging** (3 points) - Fix broken code
 4. **Complex Debugging + Video** (10 points) - Debug code and record a 2-4 minute video explanation
 
@@ -270,13 +278,128 @@ You can earn up to 6 points on each question
 - Provide code examples when asked and explain how they relate to your answer afterwards.
 - Proofread before submitting.
 
-## Section 2: Coding Fluency (24 points)
+### Question 1
+
+The following block of code throws an error. *Without running it:*
+
+* Identify the kind of error it throws  
+* Explain why it is thrown.  
+* Suggest a fix to avoid the error
+
+```javascript
+const react = (isReuben) => {
+  if (isReuben) {
+    let currentStatus = 'Everything is just fine';
+  } else {
+    let currentStatus = 'Time to panic.'
+  }
+  
+  console.log(currentStatus);
+}
+
+react(true);
+```
+
+### Question 2
+
+What does the following code log? Explain why.
+
+```javascript
+let bestPlayer = { name: "Lebron James" };
+let theGOAT = bestPlayer;
+bestPlayer.name = "Michael Jordan";
+console.log(theGOAT.name);
+```
+
+### Question 3
+
+What does the following code log? Explain why.
+
+```javascript
+const theHustler = 'Laisha';
+
+const shoutOut = () => {
+  const theHustler = 'Paul';
+  console.log(`${theHustler} is the hardest working person in the room.`);
+}
+
+shoutOut();
+console.log(`${theHustler} is also the hardest working person in the room.`);
+```
+
+### Question 4
+
+In a few paragraphs, give a brief lesson on the topic of **rest parameters**.
+
+In your lesson, be sure to cover the following:
+
+* What is the purpose of "rest parameters"?  
+* How do we use them? Illustrate the use of rest parameters by writing a function called `sum` that takes *any* number of integers as arguments and returns their sum.
+
+```javascript
+sum(1, 2, 10); // 13
+sum(5); // 5
+sum(100, 200, 800, 1, 1, 1); // 1103;
+```
+
+### Question 5
+
+Imagine you are teaching a brand new programmer a brief lesson about **scope**. Your lesson should have the following components:
+
+* A technical definition of scope ("According to MDN, scope is...")  
+* An analogy ("You can think of scope like ...")  
+* A short code snippet that demonstrates scope (make sure to wrap it in triple backticks)  
+* An explanation of your example  
+
+For each section, use clear and concise language. Double check spelling and grammar.
+
+### Question 6
+
+Imagine you are teaching a brand new programmer a brief lesson about **pure functions**. Your lesson should have the following components:
+
+* A technical definition of pure functions ("According to MDN, a pure function is...")  
+* An analogy ("You can think of pure functions like ...")  
+* A short code snippet that demonstrates a pure function (make sure to wrap it in triple backticks)  
+* An explanation of your example  
+
+For each section, use clear and concise language. Double check spelling and grammar.
+
+### Question 7
+
+Consider the function `removeLastFrom`. It makes a copy of the input array before popping off the last value and returning the copy:
+
+```javascript
+const removeLastFrom = (nums) => {
+  const numsCopy = [...nums];
+  numsCopy.pop();
+  return numsCopy;
+}
+
+const fruits = ['apple', 'banana', 'cherry', 'date'];
+const fruitsMinusOne = removeLastFrom(fruits);
+```
+
+Explain why this function is designed this way. What is the programmer aiming to avoid and why? Make sure to include the terms "pure function" and "pass by reference" in your explanation.
+
+### Question 8
+
+You are a developer on an e-commerce website (like Amazon.com). Your job is to write code that lets users add items to a shopping cart, adjust the quantities of each item, and see a total of all items.
+
+Answer the following questions:
+
+* What data type(s) would you use to represent a single item in the cart? Why?  
+* What data type(s) would you use to represent the entire shopping cart that holds those items? Why?  
+* Provide a hard-coded example of a `shoppingCart` with multiple items to support your explanation.
+
+---
+
+## Section 2: Coding Fluency (20 points)
 
 **File:** `src/from-scratch.js`
 
 **Instructions:**
 1. Open `src/from-scratch.js`
-2. Write 6 functions according to the specifications in the file
+2. Write each function according to the specifications listed below
 3. Run tests frequently to check your work:
    
   ```bash

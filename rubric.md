@@ -8,7 +8,10 @@
 
 **8 questions × 6 points each = 48 points**
 
-Each question is graded on two components:
+Each question is graded on two components: Technical & Writing Quality
+
+**Note on Writing Quality vs. Technical Accuracy:** 
+The Writing score evaluates how well you communicate your ideas (grammar, spelling, organization, sentence clarity), not whether you use specific technical terms. You can write very clearly and still lose Technical points for missing required terminology. Conversely, using correct terms doesn't guarantee a high Writing score if your explanation is disorganized or hard to follow.
 
 ### Technical Score (0-3 points)
 
@@ -20,6 +23,8 @@ Each question is graded on two components:
 | **0 - Incomplete** | • Does not answer the question or answers incorrectly<br>• Shows fundamental misunderstanding of the concept<br>• No meaningful technical content |
 
 ### Writing Quality Score (0-3 points)
+
+Writing Quality does not include correctness, required terminology, or conceptual precision—those belong to Technical. Writing is strictly mechanics (spelling, grammar), clarity/organization, and markdown rendering.
 
 | Score | Criteria |
 |-------|----------|
@@ -46,6 +51,8 @@ Each question is graded on two components:
 | **0 - Does Not Work** | • Algorithm produces no solution<br>• Solution is grossly incorrect<br>• Does not demonstrate understanding |
 
 ### Code Style (0-1 point)
+
+Code style points may only be awarded for problems that have been attempted. If a problem has not be attempted, give 0 points.okay
 
 | Score | Criteria |
 |-------|----------|
