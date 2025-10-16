@@ -143,7 +143,7 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Explain why this function is designed this way. What is the programmer aiming to avoid? Make sure to include the terms "pass by reference" and "pure function" in your explanation.
+Explain why this function is designed this way. What kind of function is the programmer aiming to create and why? Make sure to include the terms "pass by reference" in your explanation.
 
 **Your Answer:**
 <!-- Write your answer here -->

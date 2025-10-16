@@ -16,14 +16,6 @@
   - [FAQ](#faq)
   - [Good Luck! 🚀](#good-luck-)
 - [Section 1: Short Response (48 points)](#section-1-short-response-48-points)
-  - [Short Response Question 1](#short-response-question-1)
-  - [Short Response Question 2](#short-response-question-2)
-  - [Short Response Question 3](#short-response-question-3)
-  - [Short Response Question 4](#short-response-question-4)
-  - [Short Response Question 5](#short-response-question-5)
-  - [Short Response Question 6](#short-response-question-6)
-  - [Short Response Question 7](#short-response-question-7)
-  - [Short Response Question 8](#short-response-question-8)
 - [Section 2: Coding Fluency (24 points)](#section-2-coding-fluency-24-points)
   - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
   - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
@@ -228,7 +220,7 @@ npm run lint
 ### FAQ
 
 **Q: Can I use AI tools to check my work?**  
-A: No. This assessment must be completed independently without AI assistance.
+A: It depends. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to help you answer the question.
 
 **Q: What if I don't finish in 6 hours?**  
 A: You can request a 1-day extension. Speak with an instructor.
@@ -258,140 +250,26 @@ If you have questions about the instructions (not the content), ask an instructo
 **Instructions:**
 
 1. Open `src/short-response.md`
-2. Answer all 8 questions directly in the markdown file
-3. Use proper markdown formatting:
+2. The question prompts are included in the file. 
+3. Answer all 8 questions directly in the markdown file below the text **Your Answer:**
+4. Use proper markdown formatting:
    - Wrap code in triple backticks (\`\`\`javascript)
-   - Use headers, lists, and paragraphs as appropriate
-4. Check your spelling and grammar
-5. Be sure to answer ALL parts of each question
+   - Use bolded text, backticks for referencing code, headers, lists, and paragraphs as appropriate
+5. Check your spelling and grammar
+6. Be sure to answer ALL parts of each question
 
 **Grading:** 
 
 You can earn up to 6 points on each question
-- Technical Score (3 points): Accuracy, completeness, proper terminology
+- Technical Score (3 points): Accuracy, completeness, use of proper terminology
 - Writing Quality (3 points): Grammar, spelling, markdown formatting, clarity
 
 **Tips:**
-- Use technical vocabulary (e.g., "block scope", "pass by reference", "pure function")
-- Provide code examples when asked
-- Explain your reasoning clearly
-- Proofread before submitting
+- Use technical vocabulary (e.g., "block scope", "pass by reference", "pure function") to receive full credit.
+- Explain your reasoning clearly and concisely. It should be easy to understand what point you're making!
+- Provide code examples when asked and explain how they relate to your answer afterwards.
+- Proofread before submitting.
 
-### Short Response Question 1
-
-The following block of code throws an error. *Without running it:*
-  
-  - Identify the kind of error it throws
-  - Explain why it is thrown.
-  - Suggest a fix to avoid the error
-  
-  ```js
-  const react = (isReuben) => {
-  	if (isReuben) {
-  	  let currentStatus = 'Everything is just fine';
-  	} else {
-  	  let currentStatus = 'Time to panic.'
-  	}
-  	
-  	console.log(currentStatus);
-  }
-  
-  react(true);
-  ```
-    
-### Short Response Question 2
-
-What does the following code log? Explain why. Avoid running it at first to test your understanding!
-
-```js
-let bestPlayer = { name: "Lebron James" };
-let theGOAT = bestPlayer;
-bestPlayer.name = "Michael Jordan";
-console.log(theGOAT.name);
-```
-
-### Short Response Question 3
-
-What does the following code log? Explain why.
-    
-```js
-const theHustler = 'Laisha';
-
-const shoutOut = () => {
-  const theHustler = `Paul`;
-  console.log(`${theHustler} is the hardest working person in the room.`);
-}
-
-shoutOut();
-console.log(`${theHustler} is also the hardest working person in the room.`);
-```
-
-### Short Response Question 4
-
-In a few paragraphs, give a brief lesson on the topic of **rest parameters** (look them up if you are unfamiliar). 
-    
-In your lesson, be sure to cover the following:
-
-- What is the purpose of “rest parameters” ?
-- How do we use them? Illustrate the use of rest parameters by writing a function called `sum` that takes *any* number of integers as arguments and returns their sum.
-- Make sure to explain the example afterwards
-    
-  ```js
-  sum(1, 2, 10); // 13
-  sum(5); // 5
-  sum(100, 200, 800, 1, 1, 1); // 1103;
-  ```
-    
-
-### Short Response Question 5
-
-Imagine you are teaching a brand new programmer a brief lesson about **scope**. Your lesson should have the following components:
-- A technical definition of scope ("According to MDN, scope is...")
-- An analogy ("You can think of scope like ...")
-- A short code snippet that demonstrates scope (make sure to wrap it in triple backticks)
-- An explanation of your example
-
-For each section, use clear and concise language. Double check spelling and grammar.
-    
-### Short Response Question 6
-
-Imagine you are teaching a brand new programmer a brief lesson about **pure functions**. Your lesson should have the following components:
-
-- A technical definition of pure functions ("According to MDN, a pure function is...")
-- An analogy ("You can think of pure functions like ...")
-- A short code snippet that demonstrates a pure function (make sure to wrap it in triple backticks)
-- An explanation of your example
-
-For each section, use clear and concise language. Double check spelling and grammar.    
-
-### Short Response Question 7
-
-Consider the function `removeLastFrom`, it makes a copy of the input array before popping off the last value and returning the copy:
-    
-```js
-const removeLastFrom = (nums) => {
-  const numsCopy = [...nums];
-  numsCopy.pop();
-  return numsCopy;
-}
-
-const fruits = ['apple', 'banana', 'cherry', 'date'];
-const fruitsMinusOne = removeLastFrom(fruits);
-```
-
-Explain why this function is designed this way. What is the programmer aiming to avoid? Make sure to include the terms “pass-by-reference” and “pure function” in your explanation.
-    
-### Short Response Question 8
-
-You are a developer on an e-commerce website (like Amazon.com). Your job is to write code that lets users add items to a shopping cart, adjust the quantities of each item, and see a total of all items.
-    
-Answer the following questions:
-
-- What data type(s) would you use to represent a single item in the cart? Why?
-- What data type(s) would you use to represent the entire shopping cart that holds those items? Why?
-- Provide a hard-code example of a `shoppingCart` with multiple items and to support your explanation.
-
---- 
 ## Section 2: Coding Fluency (24 points)
 
 **File:** `src/from-scratch.js`
