@@ -1,7 +1,7 @@
 {
-  "name": "vanilla-js-repo",
+  "name": "mod-1-assessment",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mod 1 JavaScript Fundamentals Assessment",
   "main": "index.js",
   "scripts": {
     "preinstall": "cp hooks/pre-commit .git/hooks/pre-commit",

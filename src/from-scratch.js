@@ -1,63 +1,71 @@
-const petJudger = () => {
+/*
+  Write your functions here!
+
+  Each function should:
+  - Be exported so tests can use it
+  - Follow the exact specifications
+  - Pass all test cases
+  - Use descriptive variable names
+  - Have no linting errors
+*/
+
+// ============================================
+// Question 1: petJudger
+// ============================================
+
+const petJudger = (petBreed, petName) => {
+  // Your code here
 };
 
-const loopFromOneUpToAnother = () => {
+// ============================================
+// Question 2: loopFromOneUpToAnother
+// ============================================
+
+const loopFromOneUpToAnother = (firstNum, secondNum) => {
+  // Your code here
 };
 
-const shoutEveryLetterForLoop = () => {
+// ============================================
+// Question 3: shoutEveryLetterForLoop
+// ============================================
+
+const shoutEveryLetterForLoop = (str) => {
+  // Your code here
 };
 
-const shoutArrayMethod = () => {
+// ============================================
+// Question 4: letterCaseCounts
+// ============================================
+
+const letterCaseCounts = (str) => {
+  // Your code here
 };
 
-const generateMultiplesOf5ToNum = () => {
+// ============================================
+// Question 5: getNamesOfGreedyGnomes
+// ============================================
+
+const getNamesOfGreedyGnomes = (gnomes) => {
+  // Your code here
 };
 
-const isLongArray = () => {
+// ============================================
+// Question 6: sumBetweenIndexes (BONUS)
+// ============================================
+
+const sumBetweenIndexes = (nums, start, end) => {
+  // Your code here
 };
 
-const appendOrPrepend = () => {
-};
-
-const replaceMiddleValue = () => {
-};
-
-const getAllXCoordinates = () => {
-};
-
-const carMaker = () => {
-};
-
-const getFavoriteChildName = () => {
-};
-
-const getPessimisticTotal = () => {
-};
-
-const getNamesOfGreedyGnomes = () => {
-};
-
-const obliterate = () => {
-};
-
-// Do this only after all else
-const getAllNumbersFromString = () => {
-};
+// ============================================
+// Exports
+// ============================================
 
 module.exports = {
   petJudger,
   loopFromOneUpToAnother,
   shoutEveryLetterForLoop,
-  shoutArrayMethod,
-  generateMultiplesOf5ToNum,
-  isLongArray,
-  appendOrPrepend,
-  replaceMiddleValue,
-  getAllXCoordinates,
-  carMaker,
-  getFavoriteChildName,
-  getPessimisticTotal,
+  letterCaseCounts,
   getNamesOfGreedyGnomes,
-  getAllNumbersFromString,
-  obliterate,
+  sumBetweenIndexes,
 };
