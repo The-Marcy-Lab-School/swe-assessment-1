@@ -2,17 +2,10 @@
 
 **Table of Contents:**
 - [Assessment Overview](#assessment-overview)
-  - [Sections:](#sections)
-  - [Assessment Structure](#assessment-structure)
   - [Setup Instructions](#setup-instructions)
-  - [Running Tests](#running-tests)
+  - [Running Tests \& Linter for Code Style](#running-tests--linter-for-code-style)
   - [Submission Instructions](#submission-instructions)
-  - [Getting Help](#getting-help)
-  - [Assessment Tips](#assessment-tips)
-    - [General:](#general)
-    - [For Short Response:](#for-short-response)
-    - [For Coding:](#for-coding)
-    - [For the Video:](#for-the-video)
+  - [What Resources Can I Use?](#what-resources-can-i-use)
   - [FAQ](#faq)
   - [Good Luck! 🚀](#good-luck-)
 - [Section 1: Short Response](#section-1-short-response)
@@ -43,46 +36,26 @@ Welcome to your first module assessment! This assessment tests your understandin
 
 ## Assessment Overview
 
-**Total Time:** 6 hours  
-**Total Points:** 81 points  
-**Passing Requirements:** You must pass this assessment to continue in the program. Retakes are available if needed.
-
-### Sections:
+The assessment has 4 sections:
 
 1. **Short Response** (48 points) - Answer questions about JavaScript concepts
 2. **Coding Fluency** (20 points) - Write functions from scratch
 3. **Simple Debugging** (3 points) - Fix broken code
 4. **Complex Debugging + Video** (10 points) - Debug code and record a 2-4 minute video explanation
 
-You have **6 hours total**. Here's a suggested breakdown to manage your time:
-
-- **Section 1 (Short Response):** 2.5 hours
-- **Section 2 (Coding Fluency):** 2 hours
-- **Section 3 (Simple Debugging):** 30 minutes
-- **Section 4 (Complex Debugging + Video):** 1 hour
-
-**Remember:** These are suggestions. Adjust based on your strengths!
-
---- 
-
-### Assessment Structure
-
-Your repository contains the following files:
+Your repository contains the following relevant files:
 
 ```
 mod-1-assessment/
 ├── README.md                          # This file - your instructions
-├── package.json                       # Node package configuration
-├── .eslintrc.json                     # Linting rules
-├── src/short-response.md                  # Section 1: Answer questions here
 ├── src/
+│   ├── short-response.md             # Section 1: Answer questions here
 │   ├── from-scratch.js               # Section 2: Write functions here
 │   ├── debug.js                      # Section 3: Fix bugs here
 │   └── modify-with-video.js          # Section 4: Fix bugs and record video
 └── tests/
     ├── from-scratch.test.js          # Tests for Section 2
-    ├── debug.test.js                 # Tests for Section 3
-    └── modify-with-video.test.js     # Tests for Section 4
+    └── debug.test.js                 # Tests for Section 3
 ```
 
 --- 
@@ -114,7 +87,7 @@ You should see tests running (most will fail initially - that's expected!).
 
 --- 
 
-### Running Tests
+### Running Tests & Linter for Code Style
 
 **Run all tests:**
 ```bash
@@ -141,6 +114,8 @@ npm run lint
 ---
 
 ### Submission Instructions
+
+Before submitting your assessment, go through this checklist to ensure you haven't missed any critical details!
 
 **Submission Checklist:**
 - [ ] All questions in `src/short-response.md` are answered
@@ -175,7 +150,7 @@ npm run lint
 
 ---
 
-### Getting Help
+### What Resources Can I Use?
 
 **Allowed Resources:**
 - ✅ MDN Documentation
@@ -198,56 +173,35 @@ npm run lint
 
 ---
 
-### Assessment Tips
-
-#### General:
-- Read all instructions carefully before starting
-- Don't spend too much time on one question - move on and come back
-- Save your work frequently (`git commit` regularly)
-- Test your code as you write it
-
-#### For Short Response:
-- Answer the question fully before worrying about perfect wording
-- Use examples to illustrate your points
-- Proofread at the end
-
-#### For Coding:
-- Start with the easiest problems first
-- Get something working, then refine it
-- Read error messages - they tell you what's wrong!
-- Comment out code that's not working so tests can still run
-
-#### For the Video:
-- Write down what you want to say first
-- Do a practice run before recording
-- Speak clearly and at a moderate pace
-- It's okay to refer to notes during recording!
-
----
-
 ### FAQ
 
 **Q: Can I use AI tools to check my work?**  
-A: It depends. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to help you answer the question.
+A: Yes, but not for everything. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review and you cannot provide any AI tool with a problem from the assessment to solve. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to get an answer.
 
-**Q: What if I don't finish in 6 hours?**  
+**Q: What if I don't finish in 6 hours?**
 A: You can request a 1-day extension. Speak with an instructor.
 
-**Q: Do all my tests need to pass?**  
+**Q: Do all my tests need to pass?**
 A: Not necessarily. Partial credit is awarded based on the rubric. Do your best!
 
-**Q: Can I use Google?**  
+**Q: Can I use Google?**
 A: You can use MDN and official documentation, but don't search for solutions to the specific problems. Feel free to use the Marcy GitBook, your own notes, and past assignments.
 
-**Q: What if my video is slightly over 4 minutes?**  
+**Q: What if my video is slightly over 4 minutes?**
 A: A few seconds over is fine. Just avoid excessive rambling.
 
-**Q: Can I resubmit if I'm not happy with my score?**  
+**Q: Can I resubmit if I'm not happy with my score?**
 A: Talk to your instructor about retake options.
 
 --- 
 
 ### Good Luck! 🚀
+
+Remember:
+- Read all instructions carefully before starting
+- Don't spend too much time on one question - move on and come back
+- Save your work frequently (`git commit` regularly)
+- Test your code as you write it
 
 If you have questions about the instructions (not the content), ask an instructor.
 
@@ -272,11 +226,14 @@ You can earn up to 6 points on each question
 - Technical Score (3 points): Accuracy, completeness, use of proper terminology
 - Writing Quality (3 points): Grammar, spelling, markdown formatting, clarity
 
+For more details, refer to the [Rubric](./rubric.md).
+
 **Tips:**
 - Use technical vocabulary (e.g., "block scope", "pass by reference", "pure function") to receive full credit.
 - Explain your reasoning clearly and concisely. It should be easy to understand what point you're making!
 - Provide code examples when asked and explain how they relate to your answer afterwards.
 - Proofread before submitting.
+- Answer the question fully before worrying about perfect wording
 
 ### Question 1
 
@@ -413,11 +370,14 @@ You can earn up to 4 points on each question:
 - Algorithm Score (3 points): Does your code pass all tests?
 - Code Style (1 point): Clean code with no linting errors, descriptive variable names, no unused code
 
+For more details, refer to the [Rubric](./rubric.md).
+
 **Tips:**
 - Read the instructions carefully - pay attention to exact wording
 - Test your code frequently
 - Use descriptive variable names (not just `x`, `y`, `arr`)
-- Remove any commented-out code before submitting
+- Read error messages - they tell you what's wrong!
+- Remove any commented-out code in your completed solutions before submitting
 - Run the linter to check for style issues:
   
   ```bash
@@ -578,6 +538,8 @@ getNamesOfGreedyGnomes([]); // Returns []
 You can earn up to 1 point on each question.
 - 1 point per passing test (auto-graded)
 
+For more details, refer to the [Rubric](./rubric.md).
+
 **Tips:**
 - Read the comments in the file - they explain what's wrong
 - The fixes are usually small (1-3 lines changed)
@@ -696,13 +658,16 @@ You can earn up to 10 points for this question.
   - Clarity - easy to follow (1 point)
   - Conciseness - stays within time limit (1 point)
 
+For more details, refer to the [Rubric](./rubric.md).
+
 **Tips:**
 
 - Do the code analysis BEFORE fixing anything - you need to explain what was wrong
 - Write down your bugs before recording
-- Practice what you'll say before recording
+- Do a practice run before recording
 - Don't rush - clarity is more important than speed
 - If you make a mistake, you can re-record!
+- It's okay to refer to notes during recording!
 
 ### Part 1: Code Analysis (Do this FIRST, before fixing anything)
 1. Open `src/modify-with-video.js`
