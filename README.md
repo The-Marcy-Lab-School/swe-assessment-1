@@ -691,10 +691,6 @@ For more details, refer to the [Rubric](./rubric.md).
    ```bash
    node src/modify-with-video.js
    ```
-5. Run the tests:
-   ```bash
-   npm test modify-with-video
-   ```
 
 ### Part 3: Record Your Video (2-4 minutes)
 1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
