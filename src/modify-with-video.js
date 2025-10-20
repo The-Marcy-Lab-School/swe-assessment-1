@@ -16,9 +16,11 @@
   2. Identify 3 bugs in the code
   3. Fix all 3 bugs
   4. Record a 2-4 minute video explaining:
-     - What you expected to happen
-     - The bugs you found (what's wrong and why)
-     - The fixes you implemented
+  - What you expected to happen
+  - The bugs you found (what's wrong and why)
+  - The fixes you implemented
+
+  ADD YOUR LOOM LINK HERE: __________
 */
 
 const players = [

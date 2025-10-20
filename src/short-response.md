@@ -2,8 +2,6 @@
 
 Write your responses directly in this file. Follow markdown formatting guidelines.
 
-At the bottom, paste the link to your Loom Recording for Section 4: Complex Debugging + Video.
-
 ---
 
 ## Section 1: Short Response
@@ -31,9 +29,3 @@ At the bottom, paste the link to your Loom Recording for Section 4: Complex Debu
 
 ### Question 8
 
-
-## Section 4: Complex Debugging + Video
-
-**Paste your Loom video link here:**
-
-<!-- Paste link here -->

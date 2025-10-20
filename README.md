@@ -711,4 +711,4 @@ For more details, refer to the [Rubric](./rubric.md).
 
 4. Keep your video between 2-4 minutes
 
-5. Upload your video and add the link to `src/short-response.md` (there's a section for it at the bottom)
+5. Upload your video and add the link to the comment at the top of `src/modify-with-video.js`
