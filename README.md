@@ -29,8 +29,9 @@
   - [Debug 3: getUpdatedParent](#debug-3-getupdatedparent)
 - [Section 4: Complex Debugging + Video](#section-4-complex-debugging--video)
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
-  - [Part 2: Find and Fix Bugs](#part-2-find-and-fix-bugs)
-  - [Part 3: Record Your Video (2-4 minutes)](#part-3-record-your-video-2-4-minutes)
+  - [Part 2: Observe](#part-2-observe)
+  - [Part 3: Find and Fix Bugs](#part-3-find-and-fix-bugs)
+  - [Part 4: Record Your Video (2-4 minutes)](#part-4-record-your-video-2-4-minutes)
 
 Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
 
@@ -229,7 +230,7 @@ You can earn up to 6 points on each question
 For more details, refer to the [Rubric](./rubric.md).
 
 **Tips:**
-- Use technical vocabulary (e.g., "block scope", "pass by reference", "pure function") to receive full credit.
+- Use technical vocabulary (e.g., "block scope", "reference type", "pure function") to receive full credit.
 - Explain your reasoning clearly and concisely. It should be easy to understand what point you're making!
 - Provide code examples when asked and explain how they relate to your answer afterwards.
 - Proofread before submitting.
@@ -336,7 +337,7 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Explain why this function is designed this way. What is the programmer aiming to avoid and why? Make sure to include the terms "pure function" and "pass by reference" in your explanation.
+Explain why this function is designed this way. What is the programmer aiming to avoid and why? Make sure to include the terms "pure function" and "reference type" in your explanation.
 
 ### Question 8
 
@@ -673,14 +674,18 @@ For more details, refer to the [Rubric](./rubric.md).
 1. Open `src/modify-with-video.js`
 2. Read the code carefully
 3. Answer these questions (write them down - you'll need them for your video):
-   - What do you expect `players` and `getTopScorer()` to be the first time they are printed?
-   - What do you expect `players` and `getTopScorer()` to be the second time they are printed, after the scores have been reset?
-4. Run the code to see what happens:
+   - What expectations do you have about the program?
+   - What is this program supposed to output? 
+   - Calculate it by hand if you need to!
+
+### Part 2: Observe
+1. Run the code to see what happens:
    ```bash
    node src/modify-with-video.js
    ```
+2. Take note of errors and anything that doesn't meet your expectations (write them down - you'll need this for your video)
 
-### Part 2: Find and Fix Bugs
+### Part 3: Find and Fix Bugs
 1. Identify **3 bugs** in the code
 2. For each bug, write down:
    - What line it's on
@@ -692,7 +697,7 @@ For more details, refer to the [Rubric](./rubric.md).
    node src/modify-with-video.js
    ```
 
-### Part 3: Record Your Video (2-4 minutes)
+### Part 4: Record Your Video (2-4 minutes)
 1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
    
 2. In your video, explain:
