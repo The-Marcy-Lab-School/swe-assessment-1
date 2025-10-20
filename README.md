@@ -26,7 +26,7 @@
 - [Section 3: Simple Debugging](#section-3-simple-debugging)
   - [Debug 1: fixVariables](#debug-1-fixvariables)
   - [Debug 2: doubleAllItemsPurely](#debug-2-doubleallitemspurely)
-  - [Debug 3: getUpdatedParent](#debug-3-getupdatedparent)
+  - [Debug 3: sumArray](#debug-3-sumarray)
 - [Section 4: Complex Debugging + Video](#section-4-complex-debugging--video)
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
   - [Part 2: Observe](#part-2-observe)
@@ -574,74 +574,24 @@ console.log(nums);    // [1, 2, 3]
 console.log(doubled); // [2, 4, 6]
 ```
 
-### Debug 3: getUpdatedParent
+### Debug 3: sumArray
 
-Lastly, we have `getUpdatedParent(parent, child)` which should NOT mutate the provided `parent` object. 
-
-Currently, it is making a "shallow clone" of the `parent` object using the spread operator `{ ...parent }` which takes the values of the `parent` object and puts those values into a new object `{}`. It then adds the provided `child` to the clone's `children` array,m however it is also mutating the `children` array in the original provided `parent`. We need to instead make a "deep clone".
-
-Use the resources below to create a `deepClone` of the `parent` object before adding the provided `child` to the clone's `children` array:
-* Watch this video: https://www.youtube.com/watch?v=WLuEXwQiqac&t=103s
-* Read this article: https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone
+Lastly, we have `sumArray(nums)` which should return a sum of all numbers in the given array.
 
 Can you correct this so the tests pass?
 
 Current Behavior:
 
 ```js
-const parent = {
-  name: 'Tom',
-  children: [],
-};
-
-const updatedParent = getUpdatedParent(parent, "Itzel");
-
-console.log(updatedParent);
-/* 
-The updated parent is changed
-{
-  name: 'Tom',
-  children: [ "Itzel" ],
-};
-*/
-
-console.log(parent);
-/* 
-The original parent is changed too
-{
-  name: 'Tom',
-  children: [ "Itzel" ],
-};
-*/
+sumArray([1,2,3,4,5]);
+// returns 0
 ```
 
 Expected Behavior:
 
 ```js
-const parent = {
-  name: 'Tom',
-  children: [],
-};
-
-const updatedParent = getUpdatedParent(parent, "Itzel");
-
-console.log(updatedParent);
-/* 
-The updated parent is changed
-{
-  name: 'Tom',
-  children: [ "Itzel" ],
-};
-*/
-
-console.log(parent);
-/* 
-The original parent is NOT changed
-{
-  name: 'Tom',
-  children: [],
-};
-*/
+sumArray([1,2,3,4,5])
+// returns 15
 ```
 
 ## Section 4: Complex Debugging + Video

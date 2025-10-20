@@ -40,15 +40,16 @@ const doubleAllItemsPurely = (arr) => {
 };
 
 // ============================================
-// Question 3: getUpdatedParent
+// Question 3: sumArray
 // ============================================
-// This function should return a new parent object with the child added
-// It should NOT mutate the original parent object
+// This function should take in an array of numbers and return the sum of all the numbers
 
-const getUpdatedParent = (parent, child) => {
-  const clone = { ...parent };
-  clone.children.push(child);
-  return clone;
+const sumArray = (nums) => {
+  let sum = 0;
+  for (let i = 1; i < nums; i++) {
+    sum += nums[i];
+  }
+  return sum;
 };
 
 // ============================================
@@ -58,5 +59,5 @@ const getUpdatedParent = (parent, child) => {
 module.exports = {
   fixVariables,
   doubleAllItemsPurely,
-  getUpdatedParent,
+  sumArray,
 };

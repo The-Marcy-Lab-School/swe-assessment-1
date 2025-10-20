@@ -3,7 +3,7 @@ const ScoreCounter = require('score-tests');
 const {
   fixVariables,
   doubleAllItemsPurely,
-  getUpdatedParent,
+  sumArray,
 } = require('../src/debug');
 
 const testSuiteName = 'Debug Tests';
@@ -73,35 +73,10 @@ describe(testSuiteName, () => {
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it("getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array", () => {
-    const parent1 = {
-      name: 'Tom',
-      children: ['alice', 'ben', 'charlie'],
-    };
-    const parent1Outcome = {
-      name: 'Tom',
-      children: ['alice', 'ben', 'charlie', 'dylan'],
-    };
-
-    const result1 = getUpdatedParent(parent1, 'dylan')
-    // the returned object should match the outcome.
-    expect(result1).toEqual(parent1Outcome);
-
-    // parent1 should NOT be mutated. It should be the same as before.
-    expect(parent1).not.toEqual(parent1Outcome);
-
-    // Testing with another set of data
-    const parent2 = {
-      name: 'Greg',
-      children: ['a', 'b', 'c', 'd', 'e'],
-    };
-    const parent2Outcome = {
-      name: 'Greg',
-      children: ['a', 'b', 'c', 'd', 'e', 'f'],
-    };
-
-    expect(getUpdatedParent(parent2, 'f')).toEqual(parent2Outcome);
-    expect(parent2).not.toEqual(parent2Outcome);
+  it('sumArray - returns the sum of all numbers in the array', () => {
+    expect(sumArray([1, 2, 3, 4, 5])).toEqual(15);
+    expect(sumArray([1, 1, 1, 1, 1])).toEqual(5);
+    expect(sumArray([])).toEqual(0);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });

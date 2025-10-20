@@ -20,7 +20,7 @@
   "idToTestNameHash": {
     "DeTe1": "Debug Tests fixVariable - The message is logged and returned correctly",
     "DeTe2": "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original",
-    "DeTe3": "Debug Tests getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array",
+    "DeTe3": "Debug Tests sumArray - returns the sum of all numbers in the array",
     "FrScTe1": "From Scratch Tests From Scratch 1: petJudger - handles missing arguments",
     "FrScTe2": "From Scratch Tests From Scratch 1: petJudger - handles missing name argument",
     "FrScTe3": "From Scratch Tests From Scratch 1: petJudger - handles different breeds with valid name",
@@ -34,7 +34,7 @@
   "testNameToIdHash": {
     "Debug Tests fixVariable - The message is logged and returned correctly": "DeTe1",
     "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original": "DeTe2",
-    "Debug Tests getUpdatedParent - does not mutate the parent by making a deep clone and then adding a child to the tail of the parent's array": "DeTe3",
+    "Debug Tests sumArray - returns the sum of all numbers in the array": "DeTe3",
     "From Scratch Tests From Scratch 1: petJudger - handles missing arguments": "FrScTe1",
     "From Scratch Tests From Scratch 1: petJudger - handles missing name argument": "FrScTe2",
     "From Scratch Tests From Scratch 1: petJudger - handles different breeds with valid name": "FrScTe3",
