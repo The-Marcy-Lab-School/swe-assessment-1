@@ -313,12 +313,11 @@ For each section, use clear and concise language. Double check spelling and gram
 
 ### Question 6
 
-Imagine you are teaching a brand new programmer a brief lesson about **pure functions**. Your lesson should have the following components:
+Imagine you are teaching a brand new programmer a brief lesson about **modules**. Your lesson should have the following components:
 
-* A technical definition of pure functions ("According to MDN, a pure function is...")  
-* An analogy ("You can think of pure functions like ...")  
-* A short code snippet that demonstrates a pure function (make sure to wrap it in triple backticks)  
-* An explanation of your example  
+* A technical definition of modules 
+* An analogy
+* An explanation of the benefits of writing modular code. 
 
 For each section, use clear and concise language. Double check spelling and grammar.
 
@@ -337,7 +336,7 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Explain why this function is designed this way. What is the programmer aiming to avoid and why? Make sure to include the terms "pure function" and "reference type" in your explanation.
+Explain why the programmer made this function to modify and return a copy rather than the original? What are the benefits of doing this? 
 
 ### Question 8
 
