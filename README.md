@@ -348,7 +348,7 @@ After this code runs, explain what values will be held by `fruits` and `fruitMin
 
 Then, explain why it is necessary to make a copy of the array in order to make it a pure function. 
 
-Finally, explain why we would want to avoid mutating the input array itself.
+Finally, explain why we would want to avoid mutating the input array itself (why would we want the function to be pure?).
 
 ### Question 8
 
