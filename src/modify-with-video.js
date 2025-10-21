@@ -71,7 +71,10 @@ const getTopScorer = () => {
   return topPlayer;
 }
 
-// Test the functions
+// ============================================
+// Testing the functions
+// ============================================
+
 increaseScore('Alex');
 increaseScore('Alex');
 decreaseScore('Jordan');
@@ -83,7 +86,7 @@ console.log(players);
 console.log(getTopScorer());
 
 // ============================================
-// Exports (for testing)
+// Exports
 // ============================================
 
 module.exports = {

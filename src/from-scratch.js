@@ -50,14 +50,6 @@ const getNamesOfGreedyGnomes = (gnomes) => {
 };
 
 // ============================================
-// Question 6: sumBetweenIndexes (BONUS)
-// ============================================
-
-const sumBetweenIndexes = (nums, start, end) => {
-  // Your code here
-};
-
-// ============================================
 // Exports
 // ============================================
 
@@ -67,5 +59,4 @@ module.exports = {
   shoutEveryLetterForLoop,
   letterCaseCounts,
   getNamesOfGreedyGnomes,
-  sumBetweenIndexes,
 };

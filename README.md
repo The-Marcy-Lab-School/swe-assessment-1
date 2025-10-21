@@ -39,10 +39,10 @@ Welcome to your first module assessment! This assessment tests your understandin
 
 The assessment has 4 sections:
 
-1. **Short Response** (48 points) - Answer questions about JavaScript concepts
-2. **Coding Fluency** (20 points) - Write functions from scratch
-3. **Simple Debugging** (3 points) - Fix broken code
-4. **Complex Debugging + Video** (10 points) - Debug code and record a 2-4 minute video explanation
+1. **Short Response** - Answer questions about JavaScript concepts
+2. **Coding Fluency** - Write functions from scratch
+3. **Simple Debugging** - Fix broken code
+4. **Complex Debugging + Video** - Debug code and record a 2-4 minute video explanation
 
 Your repository contains the following relevant files:
 
