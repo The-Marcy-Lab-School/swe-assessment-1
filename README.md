@@ -344,9 +344,11 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Explain why it is necessary to make a copy of the array in order to make it a pure function. 
+After this code runs, explain what values will be held by `fruits` and `fruitMinusOne`.
 
-Then, explain why we would want to avoid mutating the input array itself.
+Then, explain why it is necessary to make a copy of the array in order to make it a pure function. 
+
+Finally, explain why we would want to avoid mutating the input array itself.
 
 ### Question 8
 
