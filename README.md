@@ -491,7 +491,7 @@ Write a function `getNamesOfGreedyGnomes(gnomes)` that takes in an array `gnomes
 
 A gnome is considered "greedy" if it has stolen *more than* one decoration.
 
-You must return an array of only the *names* of each "greedy" garden gnome. To get full points, **do not use a `for` loop**.
+You must return an array of only the *names* of each "greedy" garden gnome.
 
 If the provided array of `gnomes` is empty, return an empty array.
 
