@@ -70,6 +70,12 @@ git clone <repository-url>
 cd mod-1-assessment
 ```
 
+Switch to a `draft` branch
+
+```bash
+git checkout -B draft
+```
+
 Install Dependencies
 
 ```bash
@@ -99,7 +105,6 @@ npm test
 ```bash
 npm test from-scratch
 npm test debug
-npm test modify-with-video
 ```
 
 **Run tests in watch mode (re-runs on file changes):**
@@ -134,20 +139,22 @@ Before submitting your assessment, go through this checklist to ensure you haven
 1. Commit your changes:
   
     ```bash
-    git add .
+    git add -A
     git commit -m "Complete Mod 1 Assessment"
     ```
 
 2. Push to GitHub:
    
     ```bash
-    git push origin main
+    git push
     ```
 
-3. Submit on Canvas:
+3. Create a pull request to merge `draft` into `main` and tag your instructor for review.
 
-   - Submit the link to your GitHub repository
-   - Double-check that your latest code is visible on GitHub
+4. Submit on Canvas:
+
+   - Submit the link to your pull request on Canvas
+   - Double-check that your latest code is visible on the `draft` branch in GitHub
 
 ---
 
@@ -287,7 +294,7 @@ console.log(`${theHustler} is also the hardest working person in the room.`);
 
 ### Question 4
 
-In a few paragraphs, give a brief lesson on the topic of **rest parameters**.
+In a few paragraphs, give a brief lesson on the topic of **rest parameters** (look them up if you're not familiar!)
 
 In your lesson, be sure to cover the following:
 
@@ -323,10 +330,10 @@ For each section, use clear and concise language. Double check spelling and gram
 
 ### Question 7
 
-Consider the function `removeLastFrom`. It makes a copy of the input array before popping off the last value and returning the copy:
+Consider the function `removeLastPurely`.
 
 ```javascript
-const removeLastFrom = (nums) => {
+const removeLastPurely = (nums) => {
   const numsCopy = [...nums];
   numsCopy.pop();
   return numsCopy;
@@ -336,7 +343,9 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Explain why the programmer made this function to modify and return a copy rather than the original? What are the benefits of doing this? 
+Is this a pure function? Why or why not?
+
+Explain the benefits of creating a function that mutates and returns a copy of the input array instead of mutating the input array itself.
 
 ### Question 8
 
