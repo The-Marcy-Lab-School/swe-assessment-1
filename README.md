@@ -334,10 +334,10 @@ For each section, use clear and concise language. Double check spelling and gram
 Consider the function `removeLastPurely`. It is a **pure function**.
 
 ```javascript
-const removeLastPurely = (nums) => {
-  const numsCopy = [...nums];
-  numsCopy.pop();
-  return numsCopy;
+const removeLastPurely = (arr) => {
+  const arr = [...arr];
+  arrCopy.pop();
+  return arrCopy;
 }
 
 const fruits = ['apple', 'banana', 'cherry', 'date'];
