@@ -331,7 +331,7 @@ For each section, use clear and concise language. Double check spelling and gram
 
 ### Question 7
 
-Consider the function `removeLastPurely`.
+Consider the function `removeLastPurely`. It is a **pure function**.
 
 ```javascript
 const removeLastPurely = (nums) => {
@@ -344,9 +344,7 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastFrom(fruits);
 ```
 
-Is this a pure function? Why or why not?
-
-Explain the benefits of creating a function that mutates and returns a copy of the input array instead of mutating the input array itself.
+Explain why it is necessary to make a copy of the array in order to make it a pure. Then, explain why we want to avoid mutating the input array itself.
 
 ### Question 8
 
