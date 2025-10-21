@@ -312,7 +312,7 @@ sum(100, 200, 800, 1, 1, 1); // 1103;
 
 Imagine you are teaching a brand new programmer a brief lesson about **scope**. Your lesson should have the following components:
 
-* A definition of scope and why it is important to understand scope.
+* A definition of scope.
 * An analogy ("You can think of scope like ...")  
 * A short code snippet that demonstrates scope (make sure to wrap it in triple backticks)  
 * An explanation of your example  
