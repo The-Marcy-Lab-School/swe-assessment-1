@@ -315,9 +315,9 @@ For each section, use clear and concise language. Double check spelling and gram
 
 Imagine you are teaching a brand new programmer a brief lesson about **modules**. Your lesson should have the following components:
 
-* A technical definition of modules 
-* An analogy
-* An explanation of the benefits of writing modular code. 
+* A definition of modules in your own words.
+* An explanation of the benefits of using modules in your code.
+* An example showing how to export and import modules in Node along with an explanation of the example. 
 
 For each section, use clear and concise language. Double check spelling and grammar.
 
