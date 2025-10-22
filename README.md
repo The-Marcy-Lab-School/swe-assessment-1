@@ -341,7 +341,7 @@ const removeLastPurely = (arr) => {
 }
 
 const fruits = ['apple', 'banana', 'cherry', 'date'];
-const fruitsMinusOne = removeLastFrom(fruits);
+const fruitsMinusOne = removeLastPurely(fruits);
 ```
 
 After this code runs, explain what values will be held by `fruits` and `fruitMinusOne`.
