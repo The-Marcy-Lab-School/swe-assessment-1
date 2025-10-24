@@ -14,12 +14,12 @@
   - [Question 3](#question-3)
   - [Question 4](#question-4)
 - [Section 2: Coding Fluency](#section-2-coding-fluency)
-  - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
-  - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
-  - [From Scratch 3: shoutEveryLetterForLoop](#from-scratch-3-shouteveryletterforloop)
+  - [From Scratch 1: calculateTip](#from-scratch-1-calculatetip)
+  - [From Scratch 2: countVowels](#from-scratch-2-countvowels)
+  - [From Scratch 3: findLargest](#from-scratch-3-findlargest)
 - [Section 3: Simple Debugging](#section-3-simple-debugging)
-  - [Debug 1: fixVariables](#debug-1-fixvariables)
-  - [Debug 2: doubleAllItemsPurely](#debug-2-doubleallitemspurely)
+  - [Debug 1: greetUser](#debug-1-greetuser)
+  - [Debug 2: removeFirstItemPurely](#debug-2-removefirstitempurely)
 - [Section 4: Complex Debugging + Video](#section-4-complex-debugging--video)
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
   - [Part 2: Observe](#part-2-observe)
@@ -238,73 +238,49 @@ For more details, refer to the [Rubric](./rubric.md).
 
 ### Question 1
 
-The following block of code throws an error. *Without running it:*
+Explain the difference between **truthy** and **falsy** values in JavaScript.
 
-* Identify the kind of error it throws  
-* Explain why it is thrown.  
-* Suggest a fix to avoid the error
-
-```javascript
-const react = (isReuben) => {
-  if (isReuben) {
-    let currentStatus = 'Everything is just fine';
-  } else {
-    let currentStatus = 'Time to panic.'
-  }
-  
-  console.log(currentStatus);
-}
-
-react(true);
-```
+In your answer:
+* Define what truthy and falsy values are
+* List at least 5 falsy values in JavaScript
+* Provide a code example that demonstrates how truthy/falsy values work in conditional statements
+* Explain why understanding truthy/falsy values is important when writing code
 
 ### Question 2
 
 What does the following code log? Explain why.
 
 ```javascript
-let bestPlayer = { name: "Lebron James" };
-let theGOAT = bestPlayer;
-bestPlayer.name = "Michael Jordan";
-console.log(theGOAT.name);
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers;
+
+for (let i = 0; i < doubled.length; i++) {
+  doubled[i] = doubled[i] * 2;
+}
+
+console.log(numbers);
+console.log(doubled);
 ```
 
 ### Question 3
 
-What does the following code log? Explain why.
+Explain the difference between **parameters** and **arguments**.
 
-```javascript
-const theHustler = 'Laisha';
-
-const shoutOut = () => {
-  const theHustler = 'Paul';
-  console.log(`${theHustler} is the hardest working person in the room.`);
-}
-
-shoutOut();
-console.log(`${theHustler} is also the hardest working person in the room.`);
-```
+In your answer:
+* Define what a parameter is
+* Define what an argument is
+* Provide a code example that clearly labels which parts are parameters and which are arguments
+* Explain a common mistake programmers make when confusing these terms
 
 ### Question 4
 
-Consider the function `removeLastPurely`. It is a **pure function**.
+What is a **callback function**?
 
-```javascript
-const removeLastPurely = (arr) => {
-  const arrCopy = [...arr];
-  arrCopy.pop();
-  return arrCopy;
-}
-
-const fruits = ['apple', 'banana', 'cherry', 'date'];
-const fruitsMinusOne = removeLastPurely(fruits);
-```
-
-After this code runs, explain what values will be held by `fruits` and `fruitMinusOne`.
-
-Then, explain what makes this a pure function.
-
-Finally, explain why it is a good practice to make functions that modify arrays pure.
+In your answer:
+* Define what a callback function is in your own words
+* Explain why callback functions are useful
+* Provide a code example showing a function that takes a callback as a parameter and uses it
+* Explain what your example does step by step
 
 ---
 
@@ -342,69 +318,59 @@ For more details, refer to the [Rubric](./rubric.md).
   npm run lint
   ```
 
-### From Scratch 1: petJudger
+### From Scratch 1: calculateTip
 
-Write a function `petJudger(petBreed, petName)` that takes 2 arguments: a string `petBreed` and a string `petName`. For each It should print the following (pay close attention to capitalization, spacing, and punctuation!):
+Write a function `calculateTip(billAmount, tipPercentage)` that takes 2 arguments: a number `billAmount` and a number `tipPercentage`. The function should calculate and **return** the tip amount.
 
-- If one or both of those arguments are missing, print: `Missing information. Please provide a valid pet.`
-- If the `petBreed` is `'dog'` print: `I love dogs! (name) is so cute!`
-- If the `petBreed` is `'cat'` print: `I love cats! (name) is so cute!`
-- If the `petBreed` is `'turtle'` print: `Who doesn't love a good turtle? (name) is the tops.`
-- If the `petBreed` is `'snake'` print: `Not a fan, please take (name) and leave.`
-- All other values of `petBreed` print: `What an...interesting pet.`
+The `tipPercentage` is a whole number (e.g., 15 for 15%, 20 for 20%).
 
-This function does not need to return anything.
+If either argument is missing or if either is not a number, return `null`.
 
 Examples:
 
 ```js
-petJudger('dog', 'frida'); // Prints "I love dogs! frida is so cute!"
-petJudger('panda', 'joe'); // Prints "What an...interesting pet."
-petJudger('panda'); // Prints "Missing information. Please provide a valid pet."
+calculateTip(100, 20); // Returns 20
+calculateTip(50, 15); // Returns 7.5
+calculateTip(80, 18); // Returns 14.4
+calculateTip(100); // Returns null
+calculateTip('100', 20); // Returns null
 ```
 
-### From Scratch 2: loopFromOneUpToAnother
-Write a function `loopFromOneUpToAnother(firstNum, secondNum)` that takes 2 arguments: a number `firstNum` and a number `secondNum`. print out each number, with the first arg being inclusive, and the second arg being exclusive. Use the tests to determine what to do if the numbers are equal or the second is smaller.
+### From Scratch 2: countVowels
 
-This function does not need to return anything.
+Write a function `countVowels(str)` that takes 1 argument: a string `str`. The function should **return** the number of vowels (a, e, i, o, u) in the string. Count both uppercase and lowercase vowels.
+
+If an empty string is provided, return `0`.
+
+**You MUST use a `for` loop to solve this problem. Do NOT use higher-order array methods.**
 
 Examples:
 
 ```js
-loopFromOneUpToAnother(1, 5); // Prints on separate lines 1 2 3 4
-loopFromOneUpToAnother(5, 10); // Prints on separate lines 5 6 7 8 9
-loopFromOneUpToAnother(1, 1); // Prints nothing
-loopFromOneUpToAnother(5, 1); // Prints nothing
+countVowels('hello'); // Returns 2
+countVowels('JavaScript'); // Returns 3
+countVowels('xyz'); // Returns 0
+countVowels(''); // Returns 0
+countVowels('AEIOU'); // Returns 5
 ```
 
-### From Scratch 3: shoutEveryLetterForLoop
+### From Scratch 3: findLargest
 
-Write a function `shoutEveryLetterForLoop(str)` that takes 1 argument: a string `str`. It should print each character in the string on its own line, capitalized, and with an exclamation point`'!'` added.
+Write a function `findLargest(numbers)` that takes 1 argument: an array of numbers called `numbers`. The function should **return** the largest number in the array.
 
-A string will always be provided as input and it will have no spaces or punctuation. If an empty string is provided, don't print anything. This function does not need to return anything.
+If the array is empty, return `null`.
 
-Use a `for` loop (**do NOT use a higher-order method.**) to create this function.
+**You MUST use a `for` or `while` loop to solve this problem. Do NOT use `Math.max()` or higher-order array methods.**
 
 Examples:
 
 ```js
-/* Correct Examples: */
-shoutEveryLetterForLoop('hey');
-// H!
-// E!
-// Y!
-
-shoutEveryLetterForLoop('');
-
-/* Incorrect Examples: */
-shoutEveryLetterForLoop('hey');
-// HEY!
-
-shoutEveryLetterForLoop('hey');
-// H!E!Y!
+findLargest([1, 5, 3, 9, 2]); // Returns 9
+findLargest([10, 20, 30]); // Returns 30
+findLargest([-5, -1, -10]); // Returns -1
+findLargest([42]); // Returns 42
+findLargest([]); // Returns null
 ```
-
-Notice how each letter is printed on its own line, not all together.
 
 ---
 
@@ -433,31 +399,46 @@ For more details, refer to the [Rubric](./rubric.md).
 - Make sure you understand WHY the code was broken
 - Test after each fix
 
-### Debug 1: fixVariables
-In `debug.js` we have the `fixVariables(temp)` function that's trying to print and return a message, but isn't working. 
+### Debug 1: greetUser
 
-Could you please fix this so the tests pass?
+In `debug.js` we have the `greetUser(firstName, lastName)` function that should create and return a greeting message, but it has a scope issue.
 
-### Debug 2: doubleAllItemsPurely
-
-In `debug.js` we have `doubleAllItemsPurely(arr)` which should take in an array and return a _new array_ with the all of the values of the input array doubled. It's supposed to be pure, but it's not. Can you fix it so the tests pass?
+Can you fix it so the tests pass?
 
 Current Behavior:
 
 ```js
-const nums = [1,2,3];
-const doubled = doubleAllItemsPurely(nums)
-console.log(nums);    // [2, 4, 6]
-console.log(doubled); // [2, 4, 6]
+greetUser('Jane', 'Doe');
+// ReferenceError: greeting is not defined
 ```
 
 Expected Behavior:
 
 ```js
-const nums = [1,2,3];
-const doubled = doubleAllItemsPurely(nums)
-console.log(nums);    // [1, 2, 3]
-console.log(doubled); // [2, 4, 6]
+greetUser('Jane', 'Doe');
+// Returns "Hello, Jane Doe! Welcome!"
+```
+
+### Debug 2: removeFirstItemPurely
+
+In `debug.js` we have `removeFirstItemPurely(arr)` which should take in an array and return a _new array_ with the first item removed. It's supposed to be pure (not mutate the original), but it's not. Can you fix it so the tests pass?
+
+Current Behavior:
+
+```js
+const letters = ['a', 'b', 'c'];
+const result = removeFirstItemPurely(letters);
+console.log(letters);  // ['b', 'c']
+console.log(result);   // ['b', 'c']
+```
+
+Expected Behavior:
+
+```js
+const letters = ['a', 'b', 'c'];
+const result = removeFirstItemPurely(letters);
+console.log(letters);  // ['a', 'b', 'c']
+console.log(result);   // ['b', 'c']
 ```
 
 ---

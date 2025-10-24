@@ -1,13 +1,13 @@
 /*
-  DEBUGGING ACTIVITY: Score Tracker
+  DEBUGGING ACTIVITY: Library Book Tracker
 
-  You've been hired by a small game company to help debug their score-tracking system.
+  You've been hired by a local library to help debug their book checkout system.
 
   The code SHOULD:
-  1. Keep track of several players and their scores
-  2. Increase or decrease a player's score
-  3. Reset all scores to zero
-  4. Return the name of the current top scorer
+  1. Keep track of several books and whether they're checked out
+  2. Check out a book (set checkedOut to true)
+  3. Return a book (set checkedOut to false)
+  4. Get a list of all available books
 
   However, some functionality isn't working correctly.
 
@@ -23,71 +23,66 @@
   ADD YOUR LOOM LINK HERE: __________
 */
 
-const players = [
-  { name: 'Taylor', score: 0 },
-  { name: 'Jordan', score: 0 },
-  { name: 'Alex', score: 0 },
-  { name: 'Morgan', score: 0 },
+const books = [
+  { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', checkedOut: false },
+  { title: '1984', author: 'George Orwell', checkedOut: false },
+  { title: 'To Kill a Mockingbird', author: 'Harper Lee', checkedOut: false },
+  { title: 'Pride and Prejudice', author: 'Jane Austen', checkedOut: false },
 ];
 
-const increaseScore = (name) => {
-  for (let i = 0; i <= players.length; i++) {
-    if (players[i].name = name) {
-      players[i].score += 1;
+const checkoutBook = (title) => {
+  for (let i = 0; i <= books.length; i++) {
+    if (books[i].title === title) {
+      books[i].checkedOut = true;
     }
   }
 }
 
-const decreaseScore = (name) => {
-  for (let i = 0; i < players.length; i++) {
-    if (players[i].name === name) {
-      players[i].score -= 1;
+const returnBook = (title) => {
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].title === title) {
+      books[i].checkedOut = false;
     }
   }
 }
 
-const resetAllScores = () => {
-  for (let i = 0; i < players.length; i++) {
-    players[i].score = 0;
-  }
-}
+const getAvailableBooks = () => {
+  const available = [];
 
-const getTopScorer = () => {
-  let maxScore = -Infinity;
-  let topPlayer;
-
-  for (let i = 0; i < players.length; i++) {
-    if (players[i].score > maxScore) {
-      maxScore = players[i].score;
-      topPlayer = players[i].name;
+  for (let i = 0; i < books.length; i++) {
+    if (books[i].checkedOut = false) {
+      available.push(books[i].title);
     }
   }
 
-  return topPlayer;
+  return available;
 }
 
 // ============================================
 // Testing the functions
 // ============================================
 
-increaseScore('Alex');
-increaseScore('Alex');
-decreaseScore('Jordan');
-console.log(players);
-console.log(getTopScorer());
+console.log('Initial books:', books);
+console.log('Available books:', getAvailableBooks());
 
-resetAllScores();
-console.log(players);
-console.log(getTopScorer());
+checkoutBook('1984');
+checkoutBook('The Great Gatsby');
+console.log('\nAfter checking out 1984 and The Great Gatsby:');
+console.log(books);
+console.log('Available books:', getAvailableBooks());
+
+returnBook('1984');
+console.log('\nAfter returning 1984:');
+console.log(books);
+console.log('Available books:', getAvailableBooks());
 
 // ============================================
 // Exports
 // ============================================
 
 module.exports = {
-  players,
-  increaseScore,
-  decreaseScore,
-  resetAllScores,
-  getTopScorer,
+  books,
+  checkoutBook,
+  returnBook,
+  getAvailableBooks,
 };

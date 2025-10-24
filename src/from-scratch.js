@@ -10,26 +10,26 @@
 */
 
 // ============================================
-// Question 1: petJudger
+// Question 1: calculateTip
 // ============================================
 
-const petJudger = (petBreed, petName) => {
+const calculateTip = (billAmount, tipPercentage) => {
   // Your code here
 };
 
 // ============================================
-// Question 2: loopFromOneUpToAnother
+// Question 2: countVowels
 // ============================================
 
-const loopFromOneUpToAnother = (firstNum, secondNum) => {
+const countVowels = (str) => {
   // Your code here
 };
 
 // ============================================
-// Question 3: shoutEveryLetterForLoop
+// Question 3: findLargest
 // ============================================
 
-const shoutEveryLetterForLoop = (str) => {
+const findLargest = (numbers) => {
   // Your code here
 };
 
@@ -38,7 +38,7 @@ const shoutEveryLetterForLoop = (str) => {
 // ============================================
 
 module.exports = {
-  petJudger,
-  loopFromOneUpToAnother,
-  shoutEveryLetterForLoop,
+  calculateTip,
+  countVowels,
+  findLargest,
 };

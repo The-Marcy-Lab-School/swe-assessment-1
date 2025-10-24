@@ -7,35 +7,27 @@
 */
 
 // ============================================
-// Question 1: fixVariables
+// Question 1: greetUser
 // ============================================
-// This function should print and return a message based on temperature
+// This function should return a greeting message
 
-const fixVariables = (temp) => {
-  if (temp < 30) {
-    const msg = 'Pretty chilly.';
-  } else if (temp < 70) {
-    const msg = 'Not bad.';
-  } else if (temp < 100) {
-    const msg = 'On the hot side.';
+const greetUser = (firstName, lastName) => {
+  if (firstName && lastName) {
+    const greeting = `Hello, ${firstName} ${lastName}! Welcome!`;
   } else {
-    const msg = 'I will die of heat.';
+    const greeting = 'Hello, Guest! Welcome!';
   }
-  console.log(msg);
-  console.log("And that's how I feel about the temp!");
-  return msg;
+  return greeting;
 };
 
 // ============================================
-// Question 2: doubleAllItemsPurely
+// Question 2: removeFirstItemPurely
 // ============================================
-// This function should return a NEW array with all values doubled
+// This function should return a NEW array with the first item removed
 // It should NOT mutate the original array
 
-const doubleAllItemsPurely = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
-    arr[i] = arr[i] * 2;
-  }
+const removeFirstItemPurely = (arr) => {
+  arr.shift();
   return arr;
 };
 
@@ -44,6 +36,6 @@ const doubleAllItemsPurely = (arr) => {
 // ============================================
 
 module.exports = {
-  fixVariables,
-  doubleAllItemsPurely,
+  greetUser,
+  removeFirstItemPurely,
 };

@@ -2,7 +2,9 @@
   "testScores": {
     "Debug Tests": {
       "DeTe1": 0,
-      "DeTe2": 0
+      "DeTe2": 0,
+      "DeTe3": 0,
+      "DeTe4": 1
     },
     "From Scratch Tests": {
       "FrScTe1": 0,
@@ -10,22 +12,24 @@
       "FrScTe3": 0,
       "FrScTe4": 0,
       "FrScTe5": 0,
-      "FrScTe6": 0
+      "FrScTe6": 0,
+      "FrScTe7": 0
     }
   },
   "idToTestNameHash": {
-    "DeTe1": "Debug Tests fixVariable - The message is logged and returned correctly",
-    "DeTe2": "Debug Tests doubleAllItemsPurely - doubles each item in the array without modifying the original",
-    "DeTe3": "Debug Tests sumArray - returns the sum of all numbers in the array",
-    "FrScTe1": "From Scratch Tests From Scratch 1: petJudger - handles missing arguments",
-    "FrScTe2": "From Scratch Tests From Scratch 1: petJudger - handles missing name argument",
-    "FrScTe3": "From Scratch Tests From Scratch 1: petJudger - handles different breeds with valid name",
-    "FrScTe4": "From Scratch Tests From Scratch 2: loopFromOneUpToAnother - it logs the correct numbers",
-    "FrScTe5": "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it logs the correct letters",
-    "FrScTe6": "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it uses a for loop",
-    "FrScTe7": "From Scratch Tests From Scratch 4: letterCaseCounts - it correctly counts the letter cases",
+    "DeTe1": "Debug Tests greetUser - returns correct greeting with both names",
+    "DeTe2": "Debug Tests greetUser - returns default greeting when names are missing",
+    "DeTe3": "Debug Tests removeFirstItemPurely - removes first item without modifying original",
+    "FrScTe1": "From Scratch Tests From Scratch 1: calculateTip - calculates tip correctly",
+    "FrScTe2": "From Scratch Tests From Scratch 1: calculateTip - handles invalid inputs",
+    "FrScTe3": "From Scratch Tests From Scratch 2: countVowels - counts vowels correctly",
+    "FrScTe4": "From Scratch Tests From Scratch 2: countVowels - uses a for loop",
+    "FrScTe5": "From Scratch Tests From Scratch 3: findLargest - finds largest number",
+    "FrScTe6": "From Scratch Tests From Scratch 3: findLargest - handles edge cases",
+    "FrScTe7": "From Scratch Tests From Scratch 3: findLargest - uses a loop",
     "FrScTe8": "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length",
-    "FrScTe9": "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes"
+    "FrScTe9": "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes",
+    "DeTe4": "Debug Tests removeFirstItemPurely - handles empty array"
   },
   "testNameToIdHash": {
     "Debug Tests fixVariable - The message is logged and returned correctly": "DeTe1",
@@ -39,11 +43,22 @@
     "From Scratch Tests From Scratch 3: shoutEveryLetterForLoop - it uses a for loop": "FrScTe6",
     "From Scratch Tests From Scratch 4: letterCaseCounts - it correctly counts the letter cases": "FrScTe7",
     "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length": "FrScTe8",
-    "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes": "FrScTe9"
+    "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes": "FrScTe9",
+    "From Scratch Tests From Scratch 1: calculateTip - calculates tip correctly": "FrScTe1",
+    "From Scratch Tests From Scratch 1: calculateTip - handles invalid inputs": "FrScTe2",
+    "From Scratch Tests From Scratch 2: countVowels - counts vowels correctly": "FrScTe3",
+    "From Scratch Tests From Scratch 2: countVowels - uses a for loop": "FrScTe4",
+    "From Scratch Tests From Scratch 3: findLargest - finds largest number": "FrScTe5",
+    "From Scratch Tests From Scratch 3: findLargest - handles edge cases": "FrScTe6",
+    "From Scratch Tests From Scratch 3: findLargest - uses a loop": "FrScTe7",
+    "Debug Tests greetUser - returns correct greeting with both names": "DeTe1",
+    "Debug Tests greetUser - returns default greeting when names are missing": "DeTe2",
+    "Debug Tests removeFirstItemPurely - removes first item without modifying original": "DeTe3",
+    "Debug Tests removeFirstItemPurely - handles empty array": "DeTe4"
   },
   "humanReadable": {
-    "Debug Tests": "0/2",
-    "finalTestScore": "FINAL SCORE: 0/8",
-    "From Scratch Tests": "0/6"
+    "Debug Tests": "1/4",
+    "finalTestScore": "FINAL SCORE: 1/11",
+    "From Scratch Tests": "0/7"
   }
 }

@@ -1,197 +1,86 @@
 const path = require('path');
 const ScoreCounter = require('score-tests');
 const {
-  petJudger,
-  loopFromOneUpToAnother,
-  shoutEveryLetterForLoop,
+  calculateTip,
+  countVowels,
+  findLargest,
 } = require('../src/from-scratch');
 
 const testSuiteName = 'From Scratch Tests';
 const scoresDir = path.join(__dirname, '..', 'scores');
 const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
-const log = jest.spyOn(console, 'log').mockImplementation(() => { });
-
 describe(testSuiteName, () => {
-  afterEach(jest.clearAllMocks);
-
-  it('From Scratch 1: petJudger - handles missing arguments', () => {
-    petJudger();
-    const logsExpected = 1;
-
-    const consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-
-    const [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
-
-    jest.clearAllMocks();
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 1: petJudger - handles missing name argument', () => {
-    petJudger('cat');
-    const consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(1);
-    const [messageLogged] = consoleLogCalls[0];
-    expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
-    jest.clearAllMocks();
+  it('From Scratch 1: calculateTip - calculates tip correctly', () => {
+    expect(calculateTip(100, 20)).toBe(20);
+    expect(calculateTip(50, 15)).toBe(7.5);
+    expect(calculateTip(80, 18)).toBe(14.4);
+    expect(calculateTip(200, 25)).toBe(50);
+    expect(calculateTip(33.50, 18)).toBeCloseTo(6.03, 2);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('From Scratch 1: petJudger - handles different breeds with valid name', () => {
-    const randomName = (Math.random() + 1).toString(36).slice(2);
-    const logsExpected = 1;
-    let messageLogged;
-    let consoleLogCalls;
-
-    petJudger('cat', randomName);
-    consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-    [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe(`I love cats! ${randomName} is so cute!`);
-    jest.clearAllMocks();
-
-    petJudger('dog', randomName);
-    consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-    [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe(`I love dogs! ${randomName} is so cute!`);
-    jest.clearAllMocks();
-
-    petJudger('turtle', randomName);
-    consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-    [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe(`Who doesn't love a good turtle? ${randomName} is the tops.`);
-    jest.clearAllMocks();
-
-    petJudger('snake', randomName);
-    consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-    [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe(`Not a fan, please take ${randomName} and leave.`);
-    jest.clearAllMocks();
-
-    petJudger('owl', randomName);
-    consoleLogCalls = log.mock.calls;
-    expect(consoleLogCalls.length).toBe(logsExpected);
-    [messageLogged] = consoleLogCalls[logsExpected - 1];
-    expect(messageLogged).toBe('What an...interesting pet.');
-    jest.clearAllMocks();
+  it('From Scratch 1: calculateTip - handles invalid inputs', () => {
+    expect(calculateTip(100)).toBe(null);
+    expect(calculateTip()).toBe(null);
+    expect(calculateTip('100', 20)).toBe(null);
+    expect(calculateTip(100, '20')).toBe(null);
+    expect(calculateTip('100', '20')).toBe(null);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('From Scratch 2: loopFromOneUpToAnother - it logs the correct numbers', () => {
-    // test the function with 5-10
-    loopFromOneUpToAnother(5, 10);
-
-    // we expect the function to have used console.log 5 times
-    expect(log).toHaveBeenCalledTimes(5);
-
-    // we expect the first call to have been `console.log(5)`
-    expect(log).toHaveBeenNthCalledWith(1, 5);
-
-    // we expect the second call to have been `console.log(6)`
-    expect(log).toHaveBeenNthCalledWith(2, 6);
-
-    // and so on...
-    expect(log).toHaveBeenNthCalledWith(3, 7);
-    expect(log).toHaveBeenNthCalledWith(4, 8);
-    expect(log).toHaveBeenNthCalledWith(5, 9);
-    jest.clearAllMocks();
-
-    // test the function with 1-5
-    loopFromOneUpToAnother(1, 5);
-    expect(log).toHaveBeenCalledTimes(4);
-    expect(log).toHaveBeenNthCalledWith(1, 1);
-    expect(log).toHaveBeenNthCalledWith(2, 2);
-    expect(log).toHaveBeenNthCalledWith(3, 3);
-    expect(log).toHaveBeenNthCalledWith(4, 4);
-    jest.clearAllMocks();
-
-    // test the function with 10-16
-    loopFromOneUpToAnother(10, 16);
-    expect(log).toHaveBeenCalledTimes(6);
-    expect(log).toHaveBeenNthCalledWith(1, 10);
-    expect(log).toHaveBeenNthCalledWith(2, 11);
-    expect(log).toHaveBeenNthCalledWith(3, 12);
-    expect(log).toHaveBeenNthCalledWith(4, 13);
-    expect(log).toHaveBeenNthCalledWith(5, 14);
-    expect(log).toHaveBeenNthCalledWith(6, 15);
-    jest.clearAllMocks();
-
-    // handles equal start and end
-    loopFromOneUpToAnother(1, 1);
-    expect(log).toHaveBeenCalledTimes(0);
-    jest.clearAllMocks();
-
-    // handles start greater than end
-    loopFromOneUpToAnother(5, 3);
-    expect(log).toHaveBeenCalledTimes(0);
-    jest.clearAllMocks();
+  it('From Scratch 2: countVowels - counts vowels correctly', () => {
+    expect(countVowels('hello')).toBe(2);
+    expect(countVowels('JavaScript')).toBe(3);
+    expect(countVowels('xyz')).toBe(0);
+    expect(countVowels('')).toBe(0);
+    expect(countVowels('AEIOU')).toBe(5);
+    expect(countVowels('aeiou')).toBe(5);
+    expect(countVowels('The Quick Brown Fox')).toBe(5);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
-  it('From Scratch 3: shoutEveryLetterForLoop - it logs the correct letters', () => {
-    shoutEveryLetterForLoop('hello');
-    // we expect console.log to have been called 5 times
-    expect(log).toHaveBeenCalledTimes(5);
-
-    // we expect the first call to have been `console.log('H!')
-    expect(log).toHaveBeenNthCalledWith(1, 'H!');
-
-    // we expect the second call to have been `console.log('E!')
-    expect(log).toHaveBeenNthCalledWith(2, 'E!');
-
-    // and so on...
-    expect(log).toHaveBeenNthCalledWith(3, 'L!');
-    expect(log).toHaveBeenNthCalledWith(4, 'L!');
-    expect(log).toHaveBeenNthCalledWith(5, 'O!');
-
-    jest.clearAllMocks();
-
-    shoutEveryLetterForLoop('goodbye');
-    expect(log).toHaveBeenCalledTimes(7);
-    expect(log).toHaveBeenNthCalledWith(1, 'G!');
-    expect(log).toHaveBeenNthCalledWith(2, 'O!');
-    expect(log).toHaveBeenNthCalledWith(3, 'O!');
-    expect(log).toHaveBeenNthCalledWith(4, 'D!');
-    expect(log).toHaveBeenNthCalledWith(5, 'B!');
-    expect(log).toHaveBeenNthCalledWith(6, 'Y!');
-    expect(log).toHaveBeenNthCalledWith(7, 'E!');
-    jest.clearAllMocks();
-
-    // no calls for an empty string
-    shoutEveryLetterForLoop('');
-    expect(log).toHaveBeenCalledTimes(0);
-
-    jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 3: shoutEveryLetterForLoop - it uses a for loop', () => {
-    // We're using regex on the stringified function
-    const strFunc = shoutEveryLetterForLoop.toString();
-
-    // we expect that your function does use the `for` loop
+  it('From Scratch 2: countVowels - uses a for loop', () => {
+    const strFunc = countVowels.toString();
     const usesFor = /for\s+\(/gi.test(strFunc);
     expect(usesFor).toBe(true);
 
     // Repeated test to prevent auto pass
-    shoutEveryLetterForLoop('hello');
-    expect(log).toHaveBeenCalledTimes(5);
-    expect(log).toHaveBeenNthCalledWith(1, 'H!');
-    expect(log).toHaveBeenNthCalledWith(2, 'E!');
-    expect(log).toHaveBeenNthCalledWith(3, 'L!');
-    expect(log).toHaveBeenNthCalledWith(4, 'L!');
-    expect(log).toHaveBeenNthCalledWith(5, 'O!');
+    expect(countVowels('programming')).toBe(3);
 
-    jest.clearAllMocks();
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('From Scratch 3: findLargest - finds largest number', () => {
+    expect(findLargest([1, 5, 3, 9, 2])).toBe(9);
+    expect(findLargest([10, 20, 30])).toBe(30);
+    expect(findLargest([-5, -1, -10])).toBe(-1);
+    expect(findLargest([42])).toBe(42);
+    expect(findLargest([100, 200, 150, 175])).toBe(200);
+    expect(findLargest([5, 5, 5, 5])).toBe(5);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('From Scratch 3: findLargest - handles edge cases', () => {
+    expect(findLargest([])).toBe(null);
+
+    scoreCounter.correct(expect); // DO NOT TOUCH
+  });
+
+  it('From Scratch 3: findLargest - uses a loop', () => {
+    const strFunc = findLargest.toString();
+    const usesLoop = /for\s+\(|while\s+\(/gi.test(strFunc);
+    const usesMathMax = /Math\.max/gi.test(strFunc);
+
+    expect(usesLoop).toBe(true);
+    expect(usesMathMax).toBe(false);
+
+    // Repeated test to prevent auto pass
+    expect(findLargest([7, 2, 9, 1])).toBe(9);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });
