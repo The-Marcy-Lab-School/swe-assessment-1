@@ -17,15 +17,3 @@ Write your responses directly in this file. Follow markdown formatting guideline
 
 ### Question 4
 
-
-### Question 5
-
-
-### Question 6
-
-
-### Question 7
-
-
-### Question 8
-

@@ -40,24 +40,10 @@ const doubleAllItemsPurely = (arr) => {
 };
 
 // ============================================
-// Question 3: sumArray
-// ============================================
-// This function should take in an array of numbers and return the sum of all the numbers
-
-const sumArray = (nums) => {
-  let sum = 0;
-  for (let i = 1; i < nums; i++) {
-    sum += nums[i];
-  }
-  return sum;
-};
-
-// ============================================
 // Exports
 // ============================================
 
 module.exports = {
   fixVariables,
   doubleAllItemsPurely,
-  sumArray,
 };

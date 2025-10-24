@@ -34,22 +34,6 @@ const shoutEveryLetterForLoop = (str) => {
 };
 
 // ============================================
-// Question 4: letterCaseCounts
-// ============================================
-
-const letterCaseCounts = (str) => {
-  // Your code here
-};
-
-// ============================================
-// Question 5: getNamesOfGreedyGnomes
-// ============================================
-
-const getNamesOfGreedyGnomes = (gnomes) => {
-  // Your code here
-};
-
-// ============================================
 // Exports
 // ============================================
 
@@ -57,6 +41,4 @@ module.exports = {
   petJudger,
   loopFromOneUpToAnother,
   shoutEveryLetterForLoop,
-  letterCaseCounts,
-  getNamesOfGreedyGnomes,
 };

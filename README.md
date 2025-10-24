@@ -1,4 +1,4 @@
-# Mod 1 Assessment
+# Mod 1 Assessment - Alternate Version
 
 **Table of Contents:**
 - [Assessment Overview](#assessment-overview)
@@ -13,25 +13,18 @@
   - [Question 2](#question-2)
   - [Question 3](#question-3)
   - [Question 4](#question-4)
-  - [Question 5](#question-5)
-  - [Question 6](#question-6)
-  - [Question 7](#question-7)
-  - [Question 8](#question-8)
 - [Section 2: Coding Fluency](#section-2-coding-fluency)
   - [From Scratch 1: petJudger](#from-scratch-1-petjudger)
   - [From Scratch 2: loopFromOneUpToAnother](#from-scratch-2-loopfromoneuptoanother)
   - [From Scratch 3: shoutEveryLetterForLoop](#from-scratch-3-shouteveryletterforloop)
-  - [From Scratch 4: letterCaseCounts](#from-scratch-4-lettercasecounts)
-  - [From Scratch 5: getNamesOfGreedyGnomes](#from-scratch-5-getnamesofgreedygnomes)
 - [Section 3: Simple Debugging](#section-3-simple-debugging)
   - [Debug 1: fixVariables](#debug-1-fixvariables)
   - [Debug 2: doubleAllItemsPurely](#debug-2-doubleallitemspurely)
-  - [Debug 3: sumArray](#debug-3-sumarray)
 - [Section 4: Complex Debugging + Video](#section-4-complex-debugging--video)
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
   - [Part 2: Observe](#part-2-observe)
   - [Part 3: Find and Fix Bugs](#part-3-find-and-fix-bugs)
-  - [Part 4: Record Your Video (5-7 minutes)](#part-4-record-your-video-5-7-minutes)
+  - [Part 4: Record Your Video (3-4 minutes)](#part-4-record-your-video-3-4-minutes)
 
 Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
 
@@ -186,7 +179,7 @@ Before submitting your assessment, go through this checklist to ensure you haven
 **Q: Can I use AI tools to check my work?**  
 A: Yes, but not for everything. The code that you write and the short response answers you provide must be 100% yours. You cannot provide any AI tool with your code or writing to review and you cannot provide any AI tool with a problem from the assessment to solve. However, you can use AI to support your learning and understanding of key concepts that are mentioned in the assessment. For example, if the assessment mentions scope, you can use Gemini or ChatGPT to help you understand that concept better but you cannot paste the question prompt into these tools to get an answer.
 
-**Q: What if I don't finish in 6 hours?**
+**Q: What if I don't finish in 3 hours?**
 A: You can request a 1-day extension. Speak with an instructor.
 
 **Q: Do all my tests need to pass?**
@@ -195,7 +188,7 @@ A: Not necessarily. Partial credit is awarded based on the rubric. Do your best!
 **Q: Can I use Google?**
 A: You can use MDN and official documentation, but don't search for solutions to the specific problems. Feel free to use the Marcy GitBook, your own notes, and past assignments.
 
-**Q: What if my video is slightly over 4 minutes?**
+**Q: What if my video is slightly over the time limit?**
 A: A few seconds over is fine. Just avoid excessive rambling.
 
 **Q: Can I resubmit if I'm not happy with my score?**
@@ -220,8 +213,8 @@ If you have questions about the instructions (not the content), ask an instructo
 **Instructions:**
 
 1. Open `src/short-response.md`
-2. The question prompts are included in the file. 
-3. Answer all 8 questions directly in the markdown file below the text **Your Answer:**
+2. The question prompts are included in the file.
+3. Answer all 4 questions directly in the markdown file below the text **Your Answer:**
 4. Use proper markdown formatting:
    - Wrap code in triple backticks (\`\`\`javascript)
    - Use bolded text, backticks for referencing code, headers, lists, and paragraphs as appropriate
@@ -294,43 +287,6 @@ console.log(`${theHustler} is also the hardest working person in the room.`);
 
 ### Question 4
 
-In a few paragraphs, give a brief lesson on the topic of **rest parameters** (look them up if you're not familiar!)
-
-In your lesson, be sure to cover the following:
-
-* What is the purpose of "rest parameters"?  
-* How do we turn a parameter into a rest parameter and use them in functions? 
-* Illustrate the use of rest parameters by writing a function called `sum` that takes *any* number of integers as arguments and returns their sum.
-
-```javascript
-sum(1, 2, 10); // 13
-sum(5); // 5
-sum(100, 200, 800, 1, 1, 1); // 1103;
-```
-
-### Question 5
-
-Imagine you are teaching a brand new programmer a brief lesson about **scope**. Your lesson should have the following components:
-
-* A definition of scope.
-* An analogy ("You can think of scope like ...")  
-* A short code snippet that demonstrates scope (make sure to wrap it in triple backticks)  
-* An explanation of your example  
-
-For each section, use clear and concise language. Double check spelling and grammar.
-
-### Question 6
-
-Imagine you are teaching a brand new programmer a brief lesson about **modules**. Your lesson should have the following components:
-
-* A definition of modules in your own words.
-* An explanation of the benefits of using modules in your code.
-* An example showing how to export and import modules in Node along with an explanation of the example. 
-
-For each section, use clear and concise language. Double check spelling and grammar.
-
-### Question 7
-
 Consider the function `removeLastPurely`. It is a **pure function**.
 
 ```javascript
@@ -349,16 +305,6 @@ After this code runs, explain what values will be held by `fruits` and `fruitMin
 Then, explain what makes this a pure function.
 
 Finally, explain why it is a good practice to make functions that modify arrays pure.
-
-### Question 8
-
-You are a developer on an e-commerce website (like Amazon.com). Your job is to write code that lets users add items to a shopping cart, adjust the quantities of each item, and see a total of all items.
-
-Answer the following questions:
-
-* What data type(s) would you use to represent a single item in the cart? Why?  
-* What data type(s) would you use to represent the entire shopping cart that holds those items? Why?  
-* Provide a hard-coded example of a `shoppingCart` with multiple items to support your explanation.
 
 ---
 
@@ -460,80 +406,7 @@ shoutEveryLetterForLoop('hey');
 
 Notice how each letter is printed on its own line, not all together.
 
-### From Scratch 4: letterCaseCounts
-
-Write a function that takes a string, and returns an object containing the following three properties:
-- The number of characters in the string that are lowercase letters
-- The number of characters that are uppercase letters
-- The number of characters that are neither
-
-You may assume that the string will always contain at least one character.
-
-```js
-letterCaseCounts('abCdef 123');
-// { lowercase: 5, uppercase: 1, neither: 4 }
-
-letterCaseCounts('AbCd +Ef');
-// { lowercase: 3, uppercase: 3, neither: 2 }
-
-letterCaseCounts('123');
-// { lowercase: 0, uppercase: 0, neither: 3 }
-```
-
-### From Scratch 5: getNamesOfGreedyGnomes
-Write a function `getNamesOfGreedyGnomes(gnomes)` that takes in an array `gnomes` of garden gnome objects. Each gnome looks like this:
-
-```js
-{
-  name: 'Garbeldel',
-  gardenCount: 2,
-  age: 407,
-  stolenDecorations: ['chair', 'water fountain'],
-}
-```
-
-A gnome is considered "greedy" if it has stolen *more than* one decoration.
-
-You must return an array of only the *names* of each "greedy" garden gnome.
-
-**In order to receive full credit: you MUST use a `for` or a `while` loop to solve this problem. You cannot use higher-order array methods.**
-
-If the provided array of `gnomes` is empty, return an empty array.
-
-Examples:
-
-```js
-const gnomes = [
-  {
-    name: 'Garbeldel',
-    gardenCount: 2,
-    age: 407,
-    stolenDecorations: ['chair', 'fountain', 'statue'],
-  },
-  {
-    name: 'Farbus',
-    gardenCount: 3,
-    age: 281,
-    stolenDecorations: ['greek statue'],
-  },
-  {
-    name: 'Peekle',
-    gardenCount: 3,
-    age: 101,
-    stolenDecorations: [],
-  },
-  {
-    name: 'Jorbles',
-    gardenCount: 3,
-    age: 900,
-    stolenDecorations: ['wind chimes', 'mini golfer'],
-  },
-];
-
-getNamesOfGreedyGnomes(gnomes); // Returns ['Garbeldel', 'Jorbles']
-
-getNamesOfGreedyGnomes([]); // Returns []
-```
+---
 
 ## Section 3: Simple Debugging
 
@@ -541,7 +414,7 @@ getNamesOfGreedyGnomes([]); // Returns []
 
 **Instructions:**
 1. Open `src/debug.js`
-2. Fix the 3 broken functions
+2. Fix the 2 broken functions
 3. Run tests to verify your fixes:
    ```bash
    npm test debug
@@ -587,35 +460,17 @@ console.log(nums);    // [1, 2, 3]
 console.log(doubled); // [2, 4, 6]
 ```
 
-### Debug 3: sumArray
-
-Lastly, we have `sumArray(nums)` which should return a sum of all numbers in the given array.
-
-Can you correct this so the tests pass?
-
-Current Behavior:
-
-```js
-sumArray([1,2,3,4,5]);
-// returns 0
-```
-
-Expected Behavior:
-
-```js
-sumArray([1,2,3,4,5])
-// returns 15
-```
+---
 
 ## Section 4: Complex Debugging + Video
 
 **File:** `src/modify-with-video.js`
 
-**Grading:** 
+**Grading:**
 
-You can earn up to 10 points for this question.
-- Bug Identification (3 points): 1 point per bug correctly identified
-- Bug Fixes (3 points): 1 point per working fix
+You can earn up to 8 points for this question.
+- Bug Identification (2 points): 1 point per bug correctly identified
+- Bug Fixes (2 points): 1 point per working fix
 - Video Quality (4 points):
   - Technical vocabulary (1 point)
   - Completeness - addresses all parts (1 point)
@@ -649,34 +504,34 @@ For more details, refer to the [Rubric](./rubric.md).
 2. Take note of errors and anything that doesn't meet your expectations (write them down - you'll need this for your video)
 
 ### Part 3: Find and Fix Bugs
-1. Identify **3 bugs** in the code
+1. Identify **2 bugs** in the code
 2. For each bug, write down:
    - What line it's on
    - What's wrong
    - Why it causes a problem
-3. Fix all 3 bugs
+3. Fix all 2 bugs
 4. Run the code again to verify it works:
    ```bash
    node src/modify-with-video.js
    ```
 
-### Part 4: Record Your Video (5-7 minutes)
+### Part 4: Record Your Video (3-4 minutes)
 1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
    
 2. In your video, explain:
    - What you expected the code to do (from Part 1)
-   - The 3 bugs you found:
+   - The 2 bugs you found:
      - Where each bug is
      - What's wrong
      - Why it causes a problem
    - The fixes you implemented
-   
+
 3. Use proper technical vocabulary:
    - ✅ "greater than operator" (not "right arrow")
    - ✅ "assignment operator" (not "equal sign")
    - ✅ "strict equality operator" (not "three equal signs")
    - ✅ "array index", "object property", "loop condition"
 
-4. Keep your video between 5-7 minutes
+4. Keep your video between 3-4 minutes
 
 5. Upload your video and add the link to the comment at the top of `src/modify-with-video.js`

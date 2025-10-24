@@ -3,7 +3,6 @@ const ScoreCounter = require('score-tests');
 const {
   fixVariables,
   doubleAllItemsPurely,
-  sumArray,
 } = require('../src/debug');
 
 const testSuiteName = 'Debug Tests';
@@ -69,14 +68,6 @@ describe(testSuiteName, () => {
     const arr3 = [];
     expect(doubleAllItemsPurely(arr3)).toEqual([]);
     expect(arr3).toEqual([]);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('sumArray - returns the sum of all numbers in the array', () => {
-    expect(sumArray([1, 2, 3, 4, 5])).toEqual(15);
-    expect(sumArray([1, 1, 1, 1, 1])).toEqual(5);
-    expect(sumArray([])).toEqual(0);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });

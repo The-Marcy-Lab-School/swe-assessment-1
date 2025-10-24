@@ -4,8 +4,6 @@ const {
   petJudger,
   loopFromOneUpToAnother,
   shoutEveryLetterForLoop,
-  getNamesOfGreedyGnomes,
-  letterCaseCounts,
 } = require('../src/from-scratch');
 
 const testSuiteName = 'From Scratch Tests';
@@ -194,124 +192,6 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(5, 'O!');
 
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 4: letterCaseCounts - it correctly counts the letter cases', () => {
-    expect(letterCaseCounts('abCdef 123')).toEqual({ lowercase: 5, uppercase: 1, neither: 4 });
-    expect(letterCaseCounts('AbCd +Ef')).toEqual({ lowercase: 3, uppercase: 3, neither: 2 });
-    expect(letterCaseCounts('123')).toEqual({ lowercase: 0, uppercase: 0, neither: 3 });
-
-    jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length', () => {
-    const gnomes = [
-      {
-        name: 'Garbeldel',
-        gardenCount: 2,
-        age: 407,
-        stolenDecorations: ['chair', 'fountain', 'statue'],
-      },
-      {
-        name: 'Farbus',
-        gardenCount: 3,
-        age: 281,
-        stolenDecorations: ['greek statue', 'chair', 'bird bath'],
-      },
-      {
-        name: 'Peekle',
-        gardenCount: 3,
-        age: 101,
-        stolenDecorations: ['bird bath', 'thermometer', 'rocks'],
-      },
-      {
-        name: 'Jorbles',
-        gardenCount: 3,
-        age: 900,
-        stolenDecorations: ['wind chimes', 'rocks', 'mini golfer'],
-      },
-    ];
-
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(4);
-
-    gnomes[0].stolenDecorations.length = 2;
-    gnomes[1].stolenDecorations.length = 2;
-    gnomes[2].stolenDecorations.length = 2;
-    gnomes[3].stolenDecorations.length = 2;
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(4);
-
-    gnomes[0].stolenDecorations.length = 1;
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(3);
-
-    gnomes[1].stolenDecorations.length = 0;
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(2);
-
-    gnomes[2].stolenDecorations.length = 1;
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(1);
-
-    gnomes[3].stolenDecorations.length = 0;
-    expect(getNamesOfGreedyGnomes(gnomes).length).toBe(0);
-
-    expect(getNamesOfGreedyGnomes([]).length).toEqual(0);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
-  });
-
-  it('From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes', () => {
-    const gnomes = [
-      {
-        name: 'Garbeldel',
-        gardenCount: 2,
-        age: 407,
-        stolenDecorations: ['chair', 'fountain'],
-      },
-      {
-        name: 'Farbus',
-        gardenCount: 3,
-        age: 281,
-        stolenDecorations: ['greek statue', 'chair'],
-      },
-      {
-        name: 'Peekle',
-        gardenCount: 3,
-        age: 101,
-        stolenDecorations: ['bird bath', 'thermometer'],
-      },
-      {
-        name: 'Jorbles',
-        gardenCount: 3,
-        age: 900,
-        stolenDecorations: ['wind chimes', 'mini golfer'],
-      },
-    ];
-
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([
-      'Garbeldel', 'Farbus', 'Peekle', 'Jorbles',
-    ]);
-
-    gnomes[0].stolenDecorations.length = 2;
-    gnomes[1].stolenDecorations.length = 2;
-
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([
-      'Garbeldel', 'Farbus', 'Peekle', 'Jorbles',
-    ]);
-
-    gnomes[0].stolenDecorations.length = 0;
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Farbus', 'Peekle', 'Jorbles']);
-    gnomes[1].stolenDecorations.length = 1;
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Peekle', 'Jorbles']);
-
-    gnomes[2].stolenDecorations.length = 1;
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual(['Jorbles']);
-
-    gnomes[3].stolenDecorations.length = 0;
-    expect(getNamesOfGreedyGnomes(gnomes)).toEqual([]);
-
-    expect(getNamesOfGreedyGnomes([])).toEqual([]);
 
     scoreCounter.correct(expect); // DO NOT TOUCH
   });

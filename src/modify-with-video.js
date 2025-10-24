@@ -13,9 +13,9 @@
 
   YOUR TASKS:
   1. Run this file and observe what happens
-  2. Identify 3 bugs in the code
-  3. Fix all 3 bugs
-  4. Record a 2-4 minute video explaining:
+  2. Identify 2 bugs in the code
+  3. Fix all 2 bugs
+  4. Record a 3-4 minute video explaining:
   - What you expected to happen
   - The bugs you found (what's wrong and why)
   - The fixes you implemented
@@ -48,13 +48,8 @@ const decreaseScore = (name) => {
 
 const resetAllScores = () => {
   for (let i = 0; i < players.length; i++) {
-    let player = players[i];
-    resetSingleScore(player);
+    players[i].score = 0;
   }
-}
-
-const resetSingleScore = (player) => {
-  score = 0;
 }
 
 const getTopScorer = () => {

@@ -2,8 +2,7 @@
   "testScores": {
     "Debug Tests": {
       "DeTe1": 0,
-      "DeTe2": 0,
-      "DeTe3": 0
+      "DeTe2": 0
     },
     "From Scratch Tests": {
       "FrScTe1": 0,
@@ -11,10 +10,7 @@
       "FrScTe3": 0,
       "FrScTe4": 0,
       "FrScTe5": 0,
-      "FrScTe6": 0,
-      "FrScTe7": 0,
-      "FrScTe8": 0,
-      "FrScTe9": 0
+      "FrScTe6": 0
     }
   },
   "idToTestNameHash": {
@@ -46,8 +42,8 @@
     "From Scratch Tests From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes": "FrScTe9"
   },
   "humanReadable": {
-    "Debug Tests": "0/3",
-    "finalTestScore": "FINAL SCORE: 0/12",
-    "From Scratch Tests": "0/9"
+    "Debug Tests": "0/2",
+    "finalTestScore": "FINAL SCORE: 0/8",
+    "From Scratch Tests": "0/6"
   }
 }
