@@ -335,20 +335,20 @@ Consider the function `removeLastPurely`. It is a **pure function**.
 
 ```javascript
 const removeLastPurely = (arr) => {
-  const arr = [...arr];
+  const arrCopy = [...arr];
   arrCopy.pop();
   return arrCopy;
 }
 
 const fruits = ['apple', 'banana', 'cherry', 'date'];
-const fruitsMinusOne = removeLastFrom(fruits);
+const fruitsMinusOne = removeLastPurely(fruits);
 ```
 
 After this code runs, explain what values will be held by `fruits` and `fruitMinusOne`.
 
-Then, explain why it is necessary to make a copy of the array in order to make it a pure function. 
+Then, explain what makes this a pure function.
 
-Finally, explain why we would want to avoid mutating the input array itself (why would we want the function to be pure?).
+Finally, explain why it is a good practice to make functions that modify arrays pure.
 
 ### Question 8
 
