@@ -109,4 +109,4 @@ Code style points may only be awarded for problems that have been attempted. If 
 | **Technical Vocabulary** | 1 point | Uses precise technical terms (e.g., "comparison operator" not "equal sign", "strict equality operator" not "three equal signs", "assignment operator", "object property", "array index") |
 | **Completeness** | 1 point | Addresses all parts of the prompt (identifies bugs, explains why they cause issues, describes fixes) |
 | **Clarity** | 1 point | Explanation is easy to follow with logical order; viewer can understand without confusion |
-| **Conciseness** | 1 point | Stays within 2-4 minute time limit; no excessive rambling; gets to the point |
+| **Conciseness** | 1 point | Stays within time limit; no excessive rambling; gets to the point |

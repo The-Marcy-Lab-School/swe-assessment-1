@@ -31,7 +31,7 @@
   - [Part 1: Code Analysis (Do this FIRST, before fixing anything)](#part-1-code-analysis-do-this-first-before-fixing-anything)
   - [Part 2: Observe](#part-2-observe)
   - [Part 3: Find and Fix Bugs](#part-3-find-and-fix-bugs)
-  - [Part 4: Record Your Video (2-4 minutes)](#part-4-record-your-video-2-4-minutes)
+  - [Part 4: Record Your Video (5-7 minutes)](#part-4-record-your-video-5-7-minutes)
 
 Welcome to your first module assessment! This assessment tests your understanding of JavaScript fundamentals including variables, functions, control flow, loops, arrays, and objects.
 
@@ -658,7 +658,7 @@ For more details, refer to the [Rubric](./rubric.md).
    node src/modify-with-video.js
    ```
 
-### Part 4: Record Your Video (2-4 minutes)
+### Part 4: Record Your Video (5-7 minutes)
 1. Use **Loom** to record your screen. For instructions on downloading Loom, refer to the [Marcy GitBook](https://marcylabschool.gitbook.io/marcy-lab-school-docs/environment-setup/loom).
    
 2. In your video, explain:
@@ -675,6 +675,6 @@ For more details, refer to the [Rubric](./rubric.md).
    - ✅ "strict equality operator" (not "three equal signs")
    - ✅ "array index", "object property", "loop condition"
 
-4. Keep your video between 2-4 minutes
+4. Keep your video between 5-7 minutes
 
 5. Upload your video and add the link to the comment at the top of `src/modify-with-video.js`
