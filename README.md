@@ -496,6 +496,8 @@ A gnome is considered "greedy" if it has stolen *more than* one decoration.
 
 You must return an array of only the *names* of each "greedy" garden gnome.
 
+**In order to receive full credit: you MUST use a `for` or a `while` loop to solve this problem. You cannot use higher-order array methods.**
+
 If the provided array of `gnomes` is empty, return an empty array.
 
 Examples:
