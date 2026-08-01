@@ -1,5 +1,3 @@
-const path = require('path');
-const ScoreCounter = require('score-tests');
 const {
   fixVariables,
   doubleAllItemsPurely,
@@ -7,8 +5,6 @@ const {
 } = require('../src/debug');
 
 const testSuiteName = 'Debug Tests';
-const scoresDir = path.join(__dirname, '..', 'scores');
-const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
 const log = jest.spyOn(console, 'log').mockImplementation(() => { });
 
@@ -53,8 +49,6 @@ describe(testSuiteName, () => {
     expect(firstLog).toBe(expectedMsg);
     expect(secondLog).toBe(finalLog);
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('doubleAllItemsPurely - doubles each item in the array without modifying the original', () => {
@@ -69,19 +63,11 @@ describe(testSuiteName, () => {
     const arr3 = [];
     expect(doubleAllItemsPurely(arr3)).toEqual([]);
     expect(arr3).toEqual([]);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('sumArray - returns the sum of all numbers in the array', () => {
     expect(sumArray([1, 2, 3, 4, 5])).toEqual(15);
     expect(sumArray([1, 1, 1, 1, 1])).toEqual(5);
     expect(sumArray([])).toEqual(0);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
-
-  // IGNORE PLEASE
-  beforeEach(() => scoreCounter.add(expect));
-  afterAll(scoreCounter.export);
 });

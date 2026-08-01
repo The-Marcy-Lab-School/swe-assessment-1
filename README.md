@@ -344,11 +344,11 @@ const fruits = ['apple', 'banana', 'cherry', 'date'];
 const fruitsMinusOne = removeLastPurely(fruits);
 ```
 
-After this code runs, explain what values will be held by `fruits` and `fruitMinusOne`.
+After this code runs, identify what values will be held by `fruits` and `fruitMinusOne`.
 
 Then, explain what makes this a pure function.
 
-Finally, explain why it is a good practice to make functions that modify arrays pure.
+Finally, explain the benefits of making pure functions like this.
 
 ### Question 8
 

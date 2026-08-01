@@ -1,5 +1,3 @@
-const path = require('path');
-const ScoreCounter = require('score-tests');
 const {
   petJudger,
   loopFromOneUpToAnother,
@@ -9,8 +7,6 @@ const {
 } = require('../src/from-scratch');
 
 const testSuiteName = 'From Scratch Tests';
-const scoresDir = path.join(__dirname, '..', 'scores');
-const scoreCounter = new ScoreCounter(testSuiteName, scoresDir);
 
 const log = jest.spyOn(console, 'log').mockImplementation(() => { });
 
@@ -28,7 +24,6 @@ describe(testSuiteName, () => {
     expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
 
     jest.clearAllMocks();
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 1: petJudger - handles missing name argument', () => {
@@ -38,8 +33,6 @@ describe(testSuiteName, () => {
     const [messageLogged] = consoleLogCalls[0];
     expect(messageLogged).toBe('Missing information. Please provide a valid pet.');
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 1: petJudger - handles different breeds with valid name', () => {
@@ -82,8 +75,6 @@ describe(testSuiteName, () => {
     [messageLogged] = consoleLogCalls[logsExpected - 1];
     expect(messageLogged).toBe('What an...interesting pet.');
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 2: loopFromOneUpToAnother - it logs the correct numbers', () => {
@@ -134,8 +125,6 @@ describe(testSuiteName, () => {
     loopFromOneUpToAnother(5, 3);
     expect(log).toHaveBeenCalledTimes(0);
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 3: shoutEveryLetterForLoop - it logs the correct letters', () => {
@@ -172,8 +161,6 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenCalledTimes(0);
 
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 3: shoutEveryLetterForLoop - it uses a for loop', () => {
@@ -194,8 +181,6 @@ describe(testSuiteName, () => {
     expect(log).toHaveBeenNthCalledWith(5, 'O!');
 
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 4: letterCaseCounts - it correctly counts the letter cases', () => {
@@ -204,8 +189,6 @@ describe(testSuiteName, () => {
     expect(letterCaseCounts('123')).toEqual({ lowercase: 0, uppercase: 0, neither: 3 });
 
     jest.clearAllMocks();
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 5: getNamesOfGreedyGnomes - returns an array of the right length', () => {
@@ -257,8 +240,6 @@ describe(testSuiteName, () => {
     expect(getNamesOfGreedyGnomes(gnomes).length).toBe(0);
 
     expect(getNamesOfGreedyGnomes([]).length).toEqual(0);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
 
   it('From Scratch 5: getNamesOfGreedyGnomes - returns only the names of the gnomes', () => {
@@ -312,11 +293,5 @@ describe(testSuiteName, () => {
     expect(getNamesOfGreedyGnomes(gnomes)).toEqual([]);
 
     expect(getNamesOfGreedyGnomes([])).toEqual([]);
-
-    scoreCounter.correct(expect); // DO NOT TOUCH
   });
-
-  // IGNORE PLEASE
-  beforeEach(() => scoreCounter.add(expect));
-  afterAll(scoreCounter.export);
 });
